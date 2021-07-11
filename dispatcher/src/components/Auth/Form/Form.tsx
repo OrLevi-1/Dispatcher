@@ -13,11 +13,17 @@ const Container = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: fit-content;
+  width: 450px;
   padding: 0 50px;
+  margin: 0 10px 0 10px;
   /* padding-left: 50px; */
   /* border-radius: 15px;
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1); */
+  @media (max-width: 850px) {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: auto;
+  }
 `;
 
 const Title = styled.h1`
@@ -33,6 +39,11 @@ const Title = styled.h1`
   letter-spacing: 0.25px;
 
   color: #5a5a89;
+
+  @media (max-width: 850px) {
+    font-size: 24px;
+    justify-content: flex-start;
+  }
 `;
 
 const Question = styled.h2`
@@ -50,7 +61,12 @@ const Line = styled.div`
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  margin: 20px 0px 0px 0px;
+  margin-top: 20px;
+
+  @media (max-width: 850px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const Divider = styled.div`

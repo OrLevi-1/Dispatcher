@@ -12,8 +12,11 @@ const Page = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
   height: 100vh;
+  min-width: 325px;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `;
 
 export const LoginPage = () => (

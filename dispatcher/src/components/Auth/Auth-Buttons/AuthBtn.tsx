@@ -15,6 +15,10 @@ const BlueBtn = styled.button`
   border: none;
   background: #0058b9;
   border-radius: 10px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
 `;
 
 const Text = styled.h2`

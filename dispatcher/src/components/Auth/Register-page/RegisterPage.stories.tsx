@@ -12,8 +12,11 @@ const Page = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
+  min-width: 325px;
   height: 100vh;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `;
 
 export const RegisterPage = () => (

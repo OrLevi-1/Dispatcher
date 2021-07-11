@@ -10,7 +10,7 @@ export interface InputsProps {
 const InputList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 460px;
+  width: 100%;
 `;
 
 const Input = styled.input`
@@ -35,11 +35,15 @@ const Asterisk = styled.img`
   width: 2%;
   height: 2%;
   padding: 4px;
+  @media (max-width: 850px) {
+    width: 5%;
+    height: 15%;
+    padding: 0px;
+  }
 `;
 
 const Line = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 `;

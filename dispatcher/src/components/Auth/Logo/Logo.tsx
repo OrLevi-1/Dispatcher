@@ -6,6 +6,10 @@ export interface LogoProps {}
 
 const LogoIcon = styled.img`
   border-radius: 0px;
+  @media (max-width: 850px) {
+    width: 40%;
+    height: 60%;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,11 @@ const Container = styled.div`
   align-items: center;
   height: 100%;
   width: 35%;
+
+  @media (max-width: 850px) {
+    height: 30%;
+    width: 100%;
+  }
 `;
 
 const Logo: React.FC<LogoProps> = ({}) => {
