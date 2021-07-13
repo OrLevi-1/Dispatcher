@@ -19,7 +19,6 @@ const Container = styled.div`
   background-color: #262146;
   /* background-size: cover;
   background-repeat: no-repeat; */
-  align-items: center;
   height: 100%;
   width: 35%;
 
