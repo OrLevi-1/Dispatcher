@@ -1,46 +1,15 @@
 import React from "react";
-import styled from "styled-components";
-import "typeface-roboto";
 import { arrow } from "../../../assets";
-
+import { BlueBtn, Text, Arrow } from "../../../styles/StyledComps";
 export interface BtnProps {
   BtnText: string;
 }
-
-const BlueBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 15px;
-  border: none;
-  background: #0058b9;
-  border-radius: 10px;
-
-  @media (max-width: 850px) {
-    width: 100%;
-  }
-`;
-
-const Text = styled.h2`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.25px;
-  text-transform: uppercase;
-  padding: 0px 15px;
-  color: #ffffff;
-`;
-
-const Image = styled.img`
-  padding: 0 5px;
-`;
 
 export const AuthBtn: React.FC<BtnProps> = ({ BtnText }) => {
   return (
     <BlueBtn>
       <Text>{BtnText}</Text>
-      {BtnText !== "Login" && <Image src={arrow} />}
+      {BtnText !== "Login" && <Arrow src={arrow} />}
     </BlueBtn>
   );
 };
