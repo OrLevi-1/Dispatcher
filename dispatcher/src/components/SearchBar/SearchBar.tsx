@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({}) => {
       <SearchIcon src={searchIcon} />
       <SearchInput placeholder="Search" />
       <SearchDivider />
-      <Dropdown />
+      <Dropdown isSearch={true} />
     </SearchContainer>
   );
 };

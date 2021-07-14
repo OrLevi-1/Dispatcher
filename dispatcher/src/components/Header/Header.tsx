@@ -4,7 +4,7 @@ import {
   HeaderIcon,
   SearchDiv,
   Iconbar,
-  SearchIcon,
+  SearchIconMobile,
   Settings,
   Notifications,
   Avatar,
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <SearchBar />
       </SearchDiv>
       <Iconbar>
-        <SearchIcon src={searchIcon} />
+        <SearchIconMobile src={searchIcon} />
         <Settings src={settingsIcon} />
         <Notifications src={notifications} />
         <Avatar src={userAvatar} />

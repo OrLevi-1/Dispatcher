@@ -9,6 +9,7 @@ import settingsIcon from "./settings.svg";
 import userAvatar from "./User-avatar.svg";
 import searchIcon from "./search.svg";
 import dropdownArrow from "./dropdown.svg";
+import filterIcon from "./filter.svg";
 
 export {
   logo,
@@ -22,4 +23,5 @@ export {
   userAvatar,
   searchIcon,
   dropdownArrow,
+  filterIcon,
 };

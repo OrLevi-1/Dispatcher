@@ -1,11 +1,11 @@
 import React from "react";
-import { AuthBtn } from "./AuthBtn";
+import { BtnBlue } from "./BtnBlue";
 import { Story, Meta } from "@storybook/react";
-import { BtnProps } from "./AuthBtn";
+import { BtnProps } from "./BtnBlue";
 
 export default {
-  title: "Auth Components/Buttons/LoginButton",
-  component: AuthBtn,
+  title: "Home/BlueButton",
+  component: BtnBlue,
   decorators: [(Story) => <Story />],
   argTypes: {
     children: { control: "text" },
@@ -13,13 +13,13 @@ export default {
   },
 } as Meta;
 
-export const Primary = () => <AuthBtn BtnText={"Login"} />;
+export const Primary = () => <BtnBlue BtnType={""} BtnText={"Login"} />;
 
 // export const Log = () => (
 //   <LoginBtn onClick={() => console.log("Button clicked")}>Log</LoginBtn>
 // );
 
-const Template: Story<BtnProps> = (args) => <AuthBtn {...args} />;
+const Template: Story<BtnProps> = (args) => <BtnBlue {...args} />;
 
 // export const PrimaryA = Template.bind({});
 // PrimaryA.args = {

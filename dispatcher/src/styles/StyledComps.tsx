@@ -1,20 +1,28 @@
 import styled from "styled-components";
 import { Colors } from "./Colors";
 import "typeface-roboto";
+import "typeface-poppins";
+import "typeface-mulish";
+import { BtnProps } from "../components/Buttons/BtnBlue";
+import { DropdownProps } from "../components/Dropdown/Dropdown";
 
-// Auth-button
+// Blue-button
 
 export const BlueBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 15px;
+  height: 36px;
+  padding: ${(props: BtnProps) =>
+    props.BtnType === "Auth" ? "0px 15px" : "0px"};
   border: none;
   background: ${Colors.blue};
-  border-radius: 10px;
+  border-radius: ${(props: BtnProps) =>
+    props.BtnType === "Auth" ? "10px" : "20px"};
 
   @media (max-width: 850px) {
     width: 100%;
+    padding: 0px;
   }
 `;
 export const Text = styled.h2`
@@ -28,7 +36,7 @@ export const Text = styled.h2`
   color: white;
 `;
 export const Arrow = styled.img`
-  padding: 0 5px;
+  margin-right: 10px;
 `;
 
 // Form + Register Form
@@ -231,6 +239,7 @@ export const DropBtn = styled.button`
 export const DropdownDiv = styled.div`
   position: relative;
   display: inline-block;
+  margin-right: ${(props: DropdownProps) => (props.isSearch ? "0px" : "10px")};
 `;
 export const DropdownContent = styled.div`
   display: none;
@@ -374,14 +383,225 @@ export const SearchInput = styled.input`
   }
 `;
 export const SearchIcon = styled.img`
-  border-radius: 0px;
   width: 24px;
   height: 24px;
-  padding: 0 15px;
+  padding: 0px 15px;
 `;
 export const SearchDivider = styled.div`
   width: 40px;
   opacity: 0.8;
   border: 0.5px solid ${Colors.borderWhite};
   transform: rotate(90deg);
+`;
+
+// News Card
+
+export const CardContainer = styled.div`
+  display: flex;
+
+  width: 988px;
+  height: 242px;
+  align-items: center;
+  margin: 20px 10px;
+  background: white;
+  border: 1px solid ${Colors.borderWhite};
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+
+  @media (max-width: 1000px) {
+    width: auto;
+    height: auto;
+  }
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+`;
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  width: auto;
+  height: 100%;
+`;
+export const ArticleTop = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+`;
+export const ArticleImg = styled.img`
+  width: 245px;
+  height: 242px;
+  border: 1px solid ${Colors.borderWhite};
+  box-sizing: border-box;
+  border-radius: 20px 0px 0px 20px;
+  object-fit: cover;
+
+  @media (max-width: 850px) {
+    height: 180px;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+  }
+`;
+export const ArticleData = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 0px 16px;
+  height: inherit;
+  width: auto;
+`;
+export const ArticleTitle = styled.h1`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  line-height: 21px;
+  color: ${Colors.textBlack};
+`;
+export const ArticleSubText = styled.h2`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  line-height: 22px;
+  color: ${Colors.inputPlaceholder};
+`;
+export const ArticleText = styled.h3`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  line-height: 16px;
+  color: ${Colors.textDarkBlue};
+`;
+export const CardButton = styled.div`
+  margin: 10px;
+  margin-left: auto;
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+`;
+
+// Main Page
+
+export const General = styled.div`
+  background-color: #e5e5e5;
+`;
+export const MainBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+`;
+export const WideDivider = styled.div`
+  width: 70%;
+  height: 0px;
+  opacity: 1;
+  border: 1px solid #d9dbe9;
+  margin-top: 20px;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+export const MainDropDowns = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #e5e5e5;
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+export const FilterContainer = styled.div`
+  display: none;
+  padding: 0px 10px;
+  @media (max-width: 850px) {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+  }
+`;
+
+// Card Tags
+
+export const TagContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const SingleTag = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 20px;
+  border-radius: 20px;
+  padding: 3px 10px 3px 10px;
+  margin: 0px 5px;
+  background-color: ${Colors.tagsGrey};
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: ${Colors.textDarkBlue};
+`;
+
+// Graph Charts
+
+export const GraphCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+  height: 378px;
+  align-items: flex-start;
+  padding: 25px 15px 25px 25px;
+  margin: 20px 10px;
+  background: white;
+  border: 1px solid ${Colors.borderWhite};
+  box-sizing: border-box;
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+
+export const GraphHeader = styled.div`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: ${Colors.textBlack};
+`;
+
+export const GraphContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+
+  letter-spacing: 0.2px;
+
+  color: ${Colors.graphText};
 `;

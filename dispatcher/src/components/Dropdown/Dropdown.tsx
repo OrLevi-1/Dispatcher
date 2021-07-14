@@ -9,7 +9,9 @@ import {
   DownArrow,
 } from "../../styles/StyledComps";
 
-export interface DropdownProps {}
+export interface DropdownProps {
+  isSearch: boolean;
+}
 
 type AnyEvent = MouseEvent | TouchEvent;
 function useOnOutsideClick<T extends HTMLElement = HTMLElement>(
@@ -35,7 +37,7 @@ function useOnOutsideClick<T extends HTMLElement = HTMLElement>(
   }, [ref, handler]);
 }
 
-const Dropdown: React.FC<DropdownProps> = ({}) => {
+const Dropdown: React.FC<DropdownProps> = ({ isSearch }) => {
   const wrapperRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const handleClickInside = () => {
@@ -49,7 +51,7 @@ const Dropdown: React.FC<DropdownProps> = ({}) => {
   useOnOutsideClick(wrapperRef, handleClickOutside);
 
   return (
-    <DropdownDiv>
+    <DropdownDiv isSearch={isSearch}>
       <DropBtn onClick={handleClickInside}>
         Everything
         <DownArrow src={dropdownArrow} />

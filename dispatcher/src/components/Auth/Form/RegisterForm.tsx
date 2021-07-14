@@ -6,7 +6,7 @@ import {
 } from "../../../styles/StyledComps";
 import "typeface-roboto";
 import Inputs from "../Inputs/Inputs";
-import { AuthBtn } from "../Auth-Buttons/AuthBtn";
+import BtnBlue from "../../Buttons/BtnBlue";
 
 import React from "react";
 
@@ -17,7 +17,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({}) => (
     <Title>Register</Title>
     <Inputs isLogin={true} />
     <FormLine>
-      <AuthBtn BtnText={"Send Form"} />
+      <BtnBlue BtnType="Auth" BtnText={"Send Form"} />
       <Question>Already Have A User? Login</Question>
     </FormLine>
   </Container>

@@ -6,7 +6,7 @@ import {
   Divider,
 } from "../../../styles/StyledComps";
 import Inputs from "../Inputs/Inputs";
-import AuthBtn from "../Auth-Buttons/AuthBtn";
+import BtnBlue from "../../Buttons/BtnBlue";
 import GoogleBtn from "../Social/GoogleBtn";
 import FbButton from "../Social/FbButton";
 
@@ -19,7 +19,7 @@ const Form: React.FC<FormProps> = ({}) => (
     <Title>Welcome to Dispatcher</Title>
     <Inputs isLogin={false} />
     <FormLine>
-      <AuthBtn BtnText={"Login"} />
+      <BtnBlue BtnType="Auth" BtnText={"Login"} />
       <Question>Dont have a user yet? Register</Question>
     </FormLine>
     <Divider />
