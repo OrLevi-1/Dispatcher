@@ -2,21 +2,41 @@ import React from "react";
 import { LoginPage } from "./components/Auth/Login-page/LoginPage.stories";
 import { RegisterPage } from "./components/Auth/Register-page/RegisterPage.stories";
 import Header from "./components/Header/Header";
-import styled from "styled-components";
+import {
+  General,
+  MainBody,
+  WideDivider,
+  MainDropDowns,
+} from "./styles/StyledComps";
+import Dropdown from "./components/Dropdown/Dropdown";
 
-const Background = styled.div`
-  /* background-color: #c57878; */
-  width: 100%;
-  height: 100%;
-`;
+import NewsCard from "./components/NewsCard/NewsCard";
+import FilterMobile from "./components/FilterMobile/FilterMobile";
 
 function App() {
   return (
-    <Background>
+    <>
       <LoginPage></LoginPage>
       <RegisterPage></RegisterPage>
-      <Header />
-    </Background>
+      <General>
+        <Header />
+        <MainDropDowns>
+          <Dropdown isSearch={false} />
+          <Dropdown isSearch={false} />
+          <Dropdown isSearch={false} />
+          <Dropdown isSearch={false} />
+        </MainDropDowns>
+        <FilterMobile />
+        <MainBody>
+          <WideDivider />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+        </MainBody>
+      </General>
+    </>
   );
 }
 
