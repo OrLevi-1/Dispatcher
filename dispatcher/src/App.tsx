@@ -3,39 +3,48 @@ import { LoginPage } from "./components/Auth/Login-page/LoginPage.stories";
 import { RegisterPage } from "./components/Auth/Register-page/RegisterPage.stories";
 import Header from "./components/Header/Header";
 import {
-  General,
   MainBody,
+  TopBody,
   WideDivider,
   MainDropDowns,
+  NewsBody,
+  GraphsBody,
 } from "./styles/StyledComps";
 import Dropdown from "./components/Dropdown/Dropdown";
+import LineChart from "./components/LineChart/LineChart";
 
 import NewsCard from "./components/NewsCard/NewsCard";
 import FilterMobile from "./components/FilterMobile/FilterMobile";
+import Graph from "./components/Graph/Graph";
 
 function App() {
   return (
     <>
       <LoginPage></LoginPage>
       <RegisterPage></RegisterPage>
-      <General>
-        <Header />
+      <Header />
+      <TopBody>
         <MainDropDowns>
           <Dropdown isSearch={false} />
           <Dropdown isSearch={false} />
           <Dropdown isSearch={false} />
           <Dropdown isSearch={false} />
         </MainDropDowns>
-        <FilterMobile />
-        <MainBody>
-          <WideDivider />
+        <WideDivider />
+      </TopBody>
+      <FilterMobile />
+      <MainBody>
+        <NewsBody>
           <NewsCard />
           <NewsCard />
           <NewsCard />
           <NewsCard />
-          <NewsCard />
-        </MainBody>
-      </General>
+        </NewsBody>
+        <GraphsBody>
+          <Graph />
+          <LineChart />
+        </GraphsBody>
+      </MainBody>
     </>
   );
 }
