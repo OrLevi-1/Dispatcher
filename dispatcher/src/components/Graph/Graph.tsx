@@ -2,7 +2,9 @@ import React from "react";
 import {
   GraphCard,
   GraphHeader,
-  GraphContainer,
+  GraphDetails,
+  LeftColumn,
+  RightColumn,
 } from "../../styles/StyledComps";
 
 import { PieChart, Pie, Cell } from "recharts";
@@ -10,20 +12,20 @@ import { PieChart, Pie, Cell } from "recharts";
 export interface GraphProps {}
 
 const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group D", value: 200 },
-  { name: "Group E", value: 500 },
+  { name: "BBC", value: 40 },
+  { name: "CNN", value: 30 },
+  { name: "ABC", value: 20 },
+  { name: "NBC", value: 50 },
 ];
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#08483b"];
 
 export const ReChart = ({}) => {
   return (
-    <PieChart width={300} height={150}>
+    <PieChart width={200} height={150}>
       <Pie
         data={data}
-        cx={170}
+        cx={100}
         cy={80}
         innerRadius={40}
         outerRadius={60}
@@ -39,25 +41,23 @@ export const ReChart = ({}) => {
   );
 };
 
-const Graph: React.FC<GraphProps> = ({}) => {
+const Graph: React.FC<GraphProps> = () => {
   return (
     <GraphCard>
       <GraphHeader>Sources</GraphHeader>
       <ReChart />
-      <GraphContainer>
-        <ul>
-          <li>NBC</li>
-          <li>CNN</li>
-          <li>ABC</li>
-          <li>TBS</li>
-        </ul>
-        <ul>
-          <li>15%</li>
-          <li>35%</li>
-          <li>20%</li>
-          <li>35%</li>
-        </ul>
-      </GraphContainer>
+      <GraphDetails>
+        <LeftColumn>
+          {data.map((item) => (
+            <li>{item.name}</li>
+          ))}
+        </LeftColumn>
+        <RightColumn>
+          {data.map((item) => (
+            <li>{item.value}%</li>
+          ))}
+        </RightColumn>
+      </GraphDetails>
     </GraphCard>
   );
 };

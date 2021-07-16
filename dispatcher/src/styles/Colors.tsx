@@ -9,4 +9,6 @@ export const Colors = {
   textBlack: "#14142B",
   tagsGrey: "#f3f3ff",
   graphText: "#030035",
+  listGrey: "#9FA2B4",
+  backGroundMain: "#e5e5e5",
 } as const;

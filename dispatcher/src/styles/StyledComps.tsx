@@ -179,6 +179,7 @@ export const AuthPage = styled.div`
   align-items: center;
   height: 100vh;
   min-width: 325px;
+  background-color: white;
   @media (max-width: 850px) {
     flex-direction: column;
   }
@@ -412,7 +413,7 @@ export const CardContainer = styled.div`
     width: auto;
     height: auto;
   }
-  @media (max-width: 850px) {
+  @media (max-width: 650px) {
     flex-direction: column;
   }
 `;
@@ -438,7 +439,7 @@ export const ArticleImg = styled.img`
   border-radius: 20px 0px 0px 20px;
   object-fit: cover;
 
-  @media (max-width: 850px) {
+  @media (max-width: 650px) {
     height: 180px;
     width: 100%;
     border-radius: 20px 20px 0px 0px;
@@ -493,37 +494,46 @@ export const CardButton = styled.div`
 
 // Main Page
 
-export const General = styled.div`
-  background-color: #e5e5e5;
-`;
 export const MainBody = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e5e5e5;
+  margin: 0px 20px;
 `;
-export const WideDivider = styled.div`
-  width: 70%;
-  height: 0px;
-  opacity: 1;
-  border: 1px solid #d9dbe9;
-  margin-top: 20px;
+export const TopBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
 
   @media (max-width: 850px) {
     display: none;
   }
 `;
+export const NewsBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+`;
+export const GraphsBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+`;
+export const WideDivider = styled.div`
+  width: 75%;
+  height: 0px;
+  opacity: 1;
+  border: 1px solid #d9dbe9;
+  margin-top: 20px;
+`;
 export const MainDropDowns = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-self: flex-start;
   margin-top: 20px;
   background-color: #e5e5e5;
-  @media (max-width: 850px) {
-    display: none;
-  }
 `;
 export const FilterContainer = styled.div`
   display: none;
@@ -566,7 +576,7 @@ export const SingleTag = styled.div`
 export const GraphCard = styled.div`
   display: flex;
   flex-direction: column;
-  width: 412px;
+  width: 100%;
   height: 378px;
   align-items: flex-start;
   padding: 25px 15px 25px 25px;
@@ -577,11 +587,13 @@ export const GraphCard = styled.div`
   box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
 
+  @media (max-width: 1300px) {
+    display: none;
+  }
   @media (max-width: 850px) {
     display: none;
   }
 `;
-
 export const GraphHeader = styled.div`
   font-family: "Roboto";
   font-style: normal;
@@ -590,8 +602,16 @@ export const GraphHeader = styled.div`
   line-height: 32px;
   color: ${Colors.textBlack};
 `;
-
-export const GraphContainer = styled.div`
+export const LeftColumn = styled.ul`
+  color: ${Colors.graphText};
+  padding: 0px 20px;
+`;
+export const RightColumn = styled.ul`
+  list-style-type: none;
+  color: ${Colors.listGrey};
+  padding: 0px 20px;
+`;
+export const GraphDetails = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -602,6 +622,58 @@ export const GraphContainer = styled.div`
   line-height: 30px;
 
   letter-spacing: 0.2px;
+`;
 
-  color: ${Colors.graphText};
+// Line Chart
+
+export const ChartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px 15px 25px 25px;
+  margin: 20px 10px;
+  background: white;
+  border: 1px solid ${Colors.borderWhite};
+  box-sizing: border-box;
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 12px;
+  letter-spacing: 0.25px;
+  color: ${Colors.textDarkBlue};
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+export const ProgressContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+  width: 100%;
+  overflow: auto;
+`;
+export const LineDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  height: 12px;
+  margin: 12px 0px;
+`;
+export const ProgressBar = styled.div`
+  width: 100px;
+  background-color: #f3f3ff;
+  border-radius: 20px;
+  margin: 0px 15px;
 `;
