@@ -5,6 +5,7 @@ import { BlueBtn, Text, Arrow } from "../../styles/StyledComps";
 export interface BtnProps {
   BtnText?: string;
   BtnType?: string;
+  onClick?: () => void;
 }
 
 export const BtnBlue: React.FC<BtnProps> = ({ BtnText, BtnType }) => {

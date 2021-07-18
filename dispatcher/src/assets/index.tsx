@@ -11,6 +11,7 @@ import searchIcon from "./search.svg";
 import dropdownArrow from "./dropdown.svg";
 import filterIcon from "./filter.svg";
 import blueArrow from "./BlueArrow.svg";
+import xbutton from "./Union.svg";
 
 export {
   logo,
@@ -26,4 +27,5 @@ export {
   dropdownArrow,
   filterIcon,
   blueArrow,
+  xbutton,
 };

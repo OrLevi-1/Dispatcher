@@ -1,18 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import { MobileSearchContainer } from "../../styles/StyledComps";
+import MsHeader from "./MsHeader";
 import SearchHistory from "./SearchHistory";
-export interface MobileSearchProps {}
 
-export const MobileSearchContainer = styled.div`
-  display: flex;
-  background-color: #e5e5e5;
-  flex-direction: column;
-  margin: 15px;
-`;
+export interface MobileSearchProps {}
 
 const MobileSearch: React.FC<MobileSearchProps> = ({}) => {
   return (
     <MobileSearchContainer>
+      <MsHeader />
       <SearchHistory />
     </MobileSearchContainer>
   );

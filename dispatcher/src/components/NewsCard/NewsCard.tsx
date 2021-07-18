@@ -30,7 +30,8 @@ const NewsCard: React.FC<NewsCardProps> = ({}) => {
           <CardTag></CardTag>
         </ArticleTop>
         <ArticleTitle>
-          End of the world because everyone is playing fortnite all the time
+          China's renewed crypto crackdown wipes nearly $300 billion off the
+          market as bitcoin slides
         </ArticleTitle>
         <ArticleSubText>Or Levi</ArticleSubText>
         <ArticleText>

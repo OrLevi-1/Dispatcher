@@ -9,6 +9,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Dropdownlist = () => <Dropdown isSearch={true} />;
+export const Dropdownlist = () => <Dropdown isSearch={true} withArrow={true} />;
 
 const Template: Story<DropdownProps> = (args) => <Dropdown {...args} />;

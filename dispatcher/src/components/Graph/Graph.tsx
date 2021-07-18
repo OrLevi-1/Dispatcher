@@ -48,13 +48,13 @@ const Graph: React.FC<GraphProps> = () => {
       <ReChart />
       <GraphDetails>
         <LeftColumn>
-          {data.map((item) => (
-            <li>{item.name}</li>
+          {data.map((item, index) => (
+            <li key={index}>{item.name}</li>
           ))}
         </LeftColumn>
         <RightColumn>
-          {data.map((item) => (
-            <li>{item.value}%</li>
+          {data.map((item, index) => (
+            <li key={index}>{item.value}%</li>
           ))}
         </RightColumn>
       </GraphDetails>

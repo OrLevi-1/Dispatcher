@@ -13,19 +13,9 @@ const data = [
   { name: "NBC", value: 40 },
   { name: "CNN", value: 30 },
   { name: "BBC", value: 20 },
-  { name: "FOX", value: 70 },
   { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
-  { name: "FOX", value: 50 },
+  { name: "ABC", value: 10 },
+  { name: "CBS", value: 60 },
 ];
 
 const LineChart: React.FC<LineChartProps> = ({}) => {
@@ -33,8 +23,8 @@ const LineChart: React.FC<LineChartProps> = ({}) => {
     <ChartContainer>
       <GraphHeader>Tags</GraphHeader>
       <ProgressContainer>
-        {data.map((item) => (
-          <LineBar name={item.name} value={item.value} />
+        {data.map((item, index) => (
+          <LineBar key={index} name={item.name} value={item.value} />
         ))}
       </ProgressContainer>
     </ChartContainer>

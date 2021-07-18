@@ -3,10 +3,12 @@ import {
   Title,
   Question,
   FormLine,
+  StyledLink,
 } from "../../../styles/StyledComps";
 import "typeface-roboto";
 import Inputs from "../Inputs/Inputs";
 import BtnBlue from "../../Buttons/BtnBlue";
+import { Link } from "react-router-dom";
 
 import React from "react";
 
@@ -18,7 +20,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({}) => (
     <Inputs isLogin={true} />
     <FormLine>
       <BtnBlue BtnType="Auth" BtnText={"Send Form"} />
-      <Question>Already Have A User? Login</Question>
+      <StyledLink to="/Login">
+        <Question>Already Have A User? Login</Question>
+      </StyledLink>
     </FormLine>
   </Container>
 );

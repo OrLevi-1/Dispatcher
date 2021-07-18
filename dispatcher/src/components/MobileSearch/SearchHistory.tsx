@@ -1,34 +1,43 @@
 import React from "react";
-import styled from "styled-components";
-import MsHeader from "./MsHeader";
+import { xbutton } from "../../assets";
+import {
+  HistoryContainer,
+  RecentSearches,
+  RecentSearchesText,
+  RecentSearchesButton,
+  HistoryDiv,
+  HistoryLine,
+  HistoryText,
+  HistoryDelete,
+  HistoryDivider,
+} from "../../styles/StyledComps";
 
 export interface SearchHistoryProps {}
-
-export const HistoryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-export const RecentSearches = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 15px;
-  width: 100%;
-  height: 100px;
-`;
-export const HistoryLine = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
 
 const SearchHistory: React.FC<SearchHistoryProps> = ({}) => {
   return (
     <HistoryContainer>
-      <MsHeader />
-      <RecentSearches />
-      <HistoryLine />
-      <HistoryLine />
-      <HistoryLine />
+      <RecentSearches>
+        <RecentSearchesText>RECENT SEARCHES</RecentSearchesText>
+        <RecentSearchesButton>CLEAR</RecentSearchesButton>
+      </RecentSearches>
+      <HistoryDiv>
+        <HistoryLine>
+          <HistoryText>Crypto</HistoryText>
+          <HistoryDelete src={xbutton} />
+        </HistoryLine>
+        <HistoryDivider />
+        <HistoryLine>
+          <HistoryText>japan</HistoryText>
+          <HistoryDelete src={xbutton} />
+        </HistoryLine>
+        <HistoryDivider />
+        <HistoryLine>
+          <HistoryText>soccer</HistoryText>
+          <HistoryDelete src={xbutton} />
+        </HistoryLine>
+        <HistoryDivider />
+      </HistoryDiv>
     </HistoryContainer>
   );
 };

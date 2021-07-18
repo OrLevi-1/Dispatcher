@@ -5,7 +5,36 @@ import "typeface-poppins";
 import "typeface-mulish";
 import { BtnProps } from "../components/Buttons/BtnBlue";
 import { DropdownProps } from "../components/Dropdown/Dropdown";
+import { Link } from "react-router-dom";
 
+// React Router Dom - Link
+export const LoginLink = styled(Link)`
+  text-align: center;
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+  @media (max-width: 850px) {
+    width: 100%;
+    padding: 0px;
+  }
+`;
+export const StyledLink = styled(Link)`
+  text-align: center;
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+  width: auto;
+`;
 // Blue-button
 
 export const BlueBtn = styled.button`
@@ -87,9 +116,7 @@ export const Question = styled.h2`
 `;
 export const FormLine = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  flex-wrap: nowrap;
   margin-top: 20px;
 
   @media (max-width: 850px) {
@@ -246,13 +273,13 @@ export const DropdownContent = styled.div`
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
+  min-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
 
   & a {
-    color: #5a5a89;
+    color: ${Colors.textDarkBlue};
     font-size: 0.9em;
     padding: 12px 16px;
     text-decoration: none;
@@ -260,7 +287,9 @@ export const DropdownContent = styled.div`
   }
 
   &.show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    transition: 3ms;
   }
 `;
 export const DropdownItem = styled.a`
@@ -366,7 +395,7 @@ export const SearchContainer = styled.div`
 `;
 export const SearchInput = styled.input`
   height: 42px;
-  width: 420px;
+  width: 100%;
   border-color: transparent;
   border-radius: 0px;
   font-family: "Roboto";
@@ -374,7 +403,7 @@ export const SearchInput = styled.input`
   font-weight: normal;
   font-size: 1em;
   line-height: 22px;
-
+  margin-right: 5px;
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
@@ -400,7 +429,7 @@ export const SearchDivider = styled.div`
 export const CardContainer = styled.div`
   display: flex;
 
-  width: 988px;
+  width: 800px;
   height: 242px;
   align-items: center;
   margin: 20px 10px;
@@ -523,7 +552,7 @@ export const WideDivider = styled.div`
   width: 75%;
   height: 0px;
   opacity: 1;
-  border: 1px solid #d9dbe9;
+  border: 1px solid ${Colors.borderWhite};
   margin-top: 20px;
 `;
 export const MainDropDowns = styled.div`
@@ -533,7 +562,7 @@ export const MainDropDowns = styled.div`
   justify-content: center;
   align-self: flex-start;
   margin-top: 20px;
-  background-color: #e5e5e5;
+  background-color: ${Colors.backGroundMain};
 `;
 export const FilterContainer = styled.div`
   display: none;
@@ -542,6 +571,7 @@ export const FilterContainer = styled.div`
     display: flex;
     justify-content: space-between;
     background-color: white;
+    align-items: center;
   }
 `;
 
@@ -587,7 +617,7 @@ export const GraphCard = styled.div`
   box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1100px) {
     display: none;
   }
   @media (max-width: 850px) {
@@ -649,7 +679,7 @@ export const ChartContainer = styled.div`
   letter-spacing: 0.25px;
   color: ${Colors.textDarkBlue};
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1100px) {
     display: none;
   }
   @media (max-width: 850px) {
@@ -676,4 +706,162 @@ export const ProgressBar = styled.div`
   background-color: #f3f3ff;
   border-radius: 20px;
   margin: 0px 15px;
+`;
+
+// Mobile Search
+
+export const MobileSearchContainer = styled.div`
+  display: flex;
+  background-color: ${Colors.backGroundMain};
+  flex-direction: column;
+`;
+export const MobileSearchHeader = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  border: 1px solid ${Colors.borderWhite};
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
+`;
+export const ArrowImg = styled.img`
+  width: 30px;
+  height: 20px;
+  padding: 10px;
+  margin: 0px 10px;
+`;
+export const CancelImg = styled.img`
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  margin-right: 10px;
+`;
+export const HistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const RecentSearches = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+`;
+export const RecentSearchesText = styled.h2`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+  margin: 0 20px;
+  color: ${Colors.textDarkBlue};
+`;
+export const RecentSearchesButton = styled.div`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+  padding: 10px 5px 10px 5px;
+  margin: 0px 20px;
+  background-color: ${Colors.borderWhite};
+  color: ${Colors.textDarkBlue};
+`;
+export const HistoryDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const HistoryLine = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+export const HistoryText = styled.h3`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+  padding: 0 20px;
+
+  color: ${Colors.textDarkBlue};
+`;
+export const HistoryDelete = styled.img`
+  display: flex;
+  width: 12px;
+  height: 12px;
+  padding: 0 20px;
+`;
+export const HistoryDivider = styled.div`
+  display: flex;
+  justify-content: center;
+  width: auto;
+  opacity: 0.5;
+  margin: 0 5px;
+  border: 1px solid ${Colors.borderWhite};
+`;
+
+// Filter Mobile Page
+
+export const FilterMobileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  height: 600px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+
+  color: ${Colors.textDarkBlue};
+`;
+export const FilterTitle = styled.a`
+  margin: 20px 15px;
+`;
+export const FilterText = styled.a`
+  font-weight: normal;
+  font-size: 14px;
+  margin: 20px 15px;
+`;
+export const FilterSubText = styled.a`
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 20px 25px;
+  color: ${Colors.inputPlaceholder};
+`;
+export const FilterSelection = styled.div`
+  display: flex;
+  margin-right: 10px;
+`;
+export const FilterLine = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const FullDivider = styled.div`
+  width: 100%;
+  height: 0px;
+  opacity: 1;
+  border: 1px solid ${Colors.borderWhite};
+`;
+export const FilterBackArrow = styled.img`
+  padding-right: 15px;
 `;

@@ -11,6 +11,7 @@ import {
 
 export interface DropdownProps {
   isSearch: boolean;
+  withArrow: boolean;
 }
 
 type AnyEvent = MouseEvent | TouchEvent;
@@ -37,7 +38,7 @@ function useOnOutsideClick<T extends HTMLElement = HTMLElement>(
   }, [ref, handler]);
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ isSearch }) => {
+const Dropdown: React.FC<DropdownProps> = ({ isSearch, withArrow }) => {
   const wrapperRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const handleClickInside = () => {
@@ -51,10 +52,10 @@ const Dropdown: React.FC<DropdownProps> = ({ isSearch }) => {
   useOnOutsideClick(wrapperRef, handleClickOutside);
 
   return (
-    <DropdownDiv isSearch={isSearch}>
+    <DropdownDiv isSearch={isSearch} withArrow={withArrow}>
       <DropBtn onClick={handleClickInside}>
         Everything
-        <DownArrow src={dropdownArrow} />
+        {withArrow && <DownArrow src={dropdownArrow} />}
       </DropBtn>
       <DropdownContent id="myDropdown" ref={wrapperRef}>
         <DropdownItem>Everything</DropdownItem>

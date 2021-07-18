@@ -1,31 +1,26 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 import { SearchInput } from "../../styles/StyledComps";
-import { blueArrow } from "../../assets";
+import { blueArrow, xbutton } from "../../assets";
+import {
+  MobileSearchHeader,
+  ArrowImg,
+  CancelImg,
+} from "../../styles/StyledComps";
 
 export interface MsHeaderProps {}
 
-export const MobileSearchHeader = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 75px;
-  background-color: white;
-  border: 1px solid #d9dbe9;
-  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
-`;
-export const ArrowImg = styled.img`
-  width: 20px;
-  height: 20px;
-  padding: 10px;
-  margin-left: 10px;
-`;
-
 const MsHeader: React.FC<MsHeaderProps> = ({}) => {
+  const [inputVal, setinputVal] = useState("");
+
+  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setinputVal(e.currentTarget.value);
+  };
+
   return (
     <MobileSearchHeader>
       <ArrowImg src={blueArrow} />
-      <SearchInput placeholder="Search" />
+      <SearchInput placeholder="Search" onChange={onChange} />
+      {inputVal !== "" && <CancelImg src={xbutton} />}
     </MobileSearchHeader>
   );
 };

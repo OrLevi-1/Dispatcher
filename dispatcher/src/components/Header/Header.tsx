@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   BlueBar,
   HeaderIcon,
@@ -8,6 +9,7 @@ import {
   Settings,
   Notifications,
   Avatar,
+  StyledLink,
 } from "../../styles/StyledComps";
 import {
   logo,
@@ -29,10 +31,16 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <SearchBar />
       </SearchDiv>
       <Iconbar>
-        <SearchIconMobile src={searchIcon} />
-        <Settings src={settingsIcon} />
+        <StyledLink to="/search">
+          <SearchIconMobile src={searchIcon} />
+        </StyledLink>
+        <StyledLink to="/empty">
+          <Settings src={settingsIcon} />
+        </StyledLink>
         <Notifications src={notifications} />
-        <Avatar src={userAvatar} />
+        <Link to="/login">
+          <Avatar src={userAvatar} />
+        </Link>
       </Iconbar>
     </BlueBar>
   );
