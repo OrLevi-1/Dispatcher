@@ -430,7 +430,7 @@ export const CardContainer = styled.div`
   display: flex;
 
   width: 800px;
-  height: 242px;
+  height: auto;
   align-items: center;
   margin: 20px 10px;
   background: white;
@@ -481,7 +481,7 @@ export const ArticleData = styled.div`
   align-items: flex-start;
   padding: 0px 16px;
   height: inherit;
-  width: auto;
+  width: inherit;
 `;
 export const ArticleTitle = styled.h1`
   font-family: "Roboto";
@@ -574,6 +574,21 @@ export const FilterContainer = styled.div`
     align-items: center;
   }
 `;
+export const MainNoData = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+  height: 150px;
+  margin: 200px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 35px;
+  text-align: center;
+
+  color: ${Colors.textDarkBlue};
+`;
 
 // Card Tags
 
@@ -607,7 +622,7 @@ export const GraphCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 378px;
+  height: auto;
   align-items: flex-start;
   padding: 25px 15px 25px 25px;
   margin: 20px 10px;
@@ -706,6 +721,20 @@ export const ProgressBar = styled.div`
   background-color: #f3f3ff;
   border-radius: 20px;
   margin: 0px 15px;
+`;
+export const ChartNoData = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  margin: 10px 10px;
+  text-align: center;
+
+  color: ${Colors.textDarkBlue};
 `;
 
 // Mobile Search

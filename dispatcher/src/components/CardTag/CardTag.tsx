@@ -6,9 +6,9 @@ export interface CardTagProps {}
 const CardTag: React.FC<CardTagProps> = ({}) => {
   return (
     <TagContainer>
-      <SingleTag>Crypto</SingleTag>
+      <SingleTag>Everything</SingleTag>
       <SingleTag>+3</SingleTag>
-      <SingleTag>Japan</SingleTag>
+      <SingleTag>Israel</SingleTag>
     </TagContainer>
   );
 };

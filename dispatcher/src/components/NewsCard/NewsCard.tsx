@@ -10,41 +10,46 @@ import {
   ArticleTitle,
   CardButton,
   ArticleTop,
+  StyledLink,
 } from "../../styles/StyledComps";
 import CardTag from "../CardTag/CardTag";
+import News from "../../data/news.json";
+
 export interface NewsCardProps {}
 
 const NewsCard: React.FC<NewsCardProps> = ({}) => {
+  const data = News.articles;
+  const d = new Intl.DateTimeFormat("en-GB", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  });
   return (
-    <CardContainer>
-      <ImageContainer>
-        <ArticleImg
-          src={
-            "https://images.macrumors.com/t/uGZEsAiPbvD0wqiL5m6lE9b-Ixw=/2344x/https://images.macrumors.com/article-new/2021/01/Flat-2021-MacBook-Pro-Mockup-Feature-1.jpg"
-          }
-        />
-      </ImageContainer>
-      <ArticleData>
-        <ArticleTop>
-          <ArticleSubText>Friday, Jun 25, 2021</ArticleSubText>
-          <CardTag></CardTag>
-        </ArticleTop>
-        <ArticleTitle>
-          China's renewed crypto crackdown wipes nearly $300 billion off the
-          market as bitcoin slides
-        </ArticleTitle>
-        <ArticleSubText>Or Levi</ArticleSubText>
-        <ArticleText>
-          It was almost every kind of modern-day financial swindle rolled into
-          one.The mastermind behind an elaborate stolen credit-card scam that
-          used bitcoin, burner phones and digital wallets such as Apple … [+3413
-          chars]
-        </ArticleText>
-        <CardButton>
-          <BtnBlue BtnText="Navigate to Dispatch" />
-        </CardButton>
-      </ArticleData>
-    </CardContainer>
+    <>
+      {data.map((article, index) => (
+        <CardContainer key={index}>
+          <ImageContainer>
+            <ArticleImg src={article.urlToImage?.toString()} />
+          </ImageContainer>
+          <ArticleData>
+            <ArticleTop>
+              <ArticleSubText>
+                {d.format(Date.parse(article.publishedAt))}
+              </ArticleSubText>
+              <CardTag />
+            </ArticleTop>
+            <ArticleTitle>{article.title}</ArticleTitle>
+            <ArticleSubText>{article.source.name}</ArticleSubText>
+            <ArticleText>{article.description}</ArticleText>
+            <CardButton>
+              <a href={article.url}>
+                <BtnBlue BtnText="Navigate to Dispatch" />
+              </a>
+            </CardButton>
+          </ArticleData>
+        </CardContainer>
+      ))}
+    </>
   );
 };
 

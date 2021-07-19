@@ -5,11 +5,16 @@ import {
   GraphDetails,
   LeftColumn,
   RightColumn,
+  ChartNoData,
+  ProgressContainer,
 } from "../../styles/StyledComps";
 
 import { PieChart, Pie, Cell } from "recharts";
+import { noDataChart } from "../../assets";
 
-export interface GraphProps {}
+export interface GraphProps {
+  isData?: boolean;
+}
 
 const data = [
   { name: "BBC", value: 40 },
@@ -41,23 +46,34 @@ export const ReChart = ({}) => {
   );
 };
 
-const Graph: React.FC<GraphProps> = () => {
+const Graph: React.FC<GraphProps> = ({ isData = true }) => {
   return (
     <GraphCard>
       <GraphHeader>Sources</GraphHeader>
-      <ReChart />
-      <GraphDetails>
-        <LeftColumn>
-          {data.map((item, index) => (
-            <li key={index}>{item.name}</li>
-          ))}
-        </LeftColumn>
-        <RightColumn>
-          {data.map((item, index) => (
-            <li key={index}>{item.value}%</li>
-          ))}
-        </RightColumn>
-      </GraphDetails>
+      {isData ? (
+        <>
+          <ReChart />
+          <GraphDetails>
+            <LeftColumn>
+              {data.map((item, index) => (
+                <li key={index}>{item.name}</li>
+              ))}
+            </LeftColumn>
+            <RightColumn>
+              {data.map((item, index) => (
+                <li key={index}>{item.value}%</li>
+              ))}
+            </RightColumn>
+          </GraphDetails>
+        </>
+      ) : (
+        <ProgressContainer>
+          <ChartNoData>
+            <img src={noDataChart} />
+            <a>No data to display</a>
+          </ChartNoData>{" "}
+        </ProgressContainer>
+      )}
     </GraphCard>
   );
 };

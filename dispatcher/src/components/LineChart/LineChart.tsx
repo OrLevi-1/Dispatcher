@@ -1,13 +1,17 @@
 import React from "react";
+import { noDataChart } from "../../assets";
 
 import {
   ChartContainer,
   GraphHeader,
   ProgressContainer,
+  ChartNoData,
 } from "../../styles/StyledComps";
 import LineBar from "./LineBar";
 
-export interface LineChartProps {}
+export interface LineChartProps {
+  isData?: boolean;
+}
 
 const data = [
   { name: "NBC", value: 40 },
@@ -18,15 +22,24 @@ const data = [
   { name: "CBS", value: 60 },
 ];
 
-const LineChart: React.FC<LineChartProps> = ({}) => {
+const LineChart: React.FC<LineChartProps> = ({ isData = true }) => {
   return (
     <ChartContainer>
       <GraphHeader>Tags</GraphHeader>
-      <ProgressContainer>
-        {data.map((item, index) => (
-          <LineBar key={index} name={item.name} value={item.value} />
-        ))}
-      </ProgressContainer>
+      {isData ? (
+        <ProgressContainer>
+          {data.map((item, index) => (
+            <LineBar key={index} name={item.name} value={item.value} />
+          ))}
+        </ProgressContainer>
+      ) : (
+        <ProgressContainer>
+          <ChartNoData>
+            <img src={noDataChart} />
+            <a>No data to display</a>
+          </ChartNoData>
+        </ProgressContainer>
+      )}
     </ChartContainer>
   );
 };

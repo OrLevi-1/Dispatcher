@@ -14,6 +14,7 @@ import {
   MainDropDowns,
   NewsBody,
   GraphsBody,
+  MainNoData,
 } from "./styles/StyledComps";
 import Dropdown from "./components/Dropdown/Dropdown";
 import LineChart from "./components/LineChart/LineChart";
@@ -23,6 +24,7 @@ import FilterMobile from "./components/FilterMobile/FilterMobile";
 import Graph from "./components/Graph/Graph";
 import FilterPage from "./components/FilterMobile/FilterPage";
 import MobileSearch from "./components/MobileSearch/MobileSearch";
+import { notFoundImg } from "./assets";
 
 function App() {
   return (
@@ -56,13 +58,36 @@ function App() {
             <MainBody>
               <NewsBody>
                 <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
               </NewsBody>
               <GraphsBody>
                 <Graph />
                 <LineChart />
+              </GraphsBody>
+            </MainBody>
+          </Route>
+
+          <Route path="/nodata">
+            <Header />
+            <TopBody>
+              <MainDropDowns>
+                <Dropdown isSearch={false} withArrow={true} />
+                <Dropdown isSearch={false} withArrow={true} />
+                <Dropdown isSearch={false} withArrow={true} />
+                <Dropdown isSearch={false} withArrow={true} />
+              </MainDropDowns>
+              <WideDivider />
+            </TopBody>
+            <FilterMobile />
+            <MainBody>
+              <NewsBody>
+                <MainNoData>
+                  <img src={notFoundImg} />
+                  <a>We couldn't find any matches for your query</a>
+                </MainNoData>
+              </NewsBody>
+              <GraphsBody>
+                <Graph isData={false} />
+                <LineChart isData={false} />
               </GraphsBody>
             </MainBody>
           </Route>
@@ -72,10 +97,8 @@ function App() {
           </Route>
 
           <Route path="/filter">
-            <FilterPage />
+            <FilterPage inDetails={false} />
           </Route>
-
-          <Route path="/empty"></Route>
         </Switch>
       </Router>
     </>

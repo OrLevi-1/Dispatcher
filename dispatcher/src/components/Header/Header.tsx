@@ -26,7 +26,9 @@ export interface HeaderProps {}
 const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <BlueBar>
-      <HeaderIcon src={logo} />
+      <StyledLink to="/">
+        <HeaderIcon src={logo} />
+      </StyledLink>
       <SearchDiv>
         <SearchBar />
       </SearchDiv>
@@ -34,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <StyledLink to="/search">
           <SearchIconMobile src={searchIcon} />
         </StyledLink>
-        <StyledLink to="/empty">
+        <StyledLink to="/nodata">
           <Settings src={settingsIcon} />
         </StyledLink>
         <Notifications src={notifications} />

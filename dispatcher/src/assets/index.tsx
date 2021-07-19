@@ -12,6 +12,8 @@ import dropdownArrow from "./dropdown.svg";
 import filterIcon from "./filter.svg";
 import blueArrow from "./BlueArrow.svg";
 import xbutton from "./Union.svg";
+import noDataChart from "./nodatachart.svg";
+import notFoundImg from "./not-found.svg";
 
 export {
   logo,
@@ -28,4 +30,6 @@ export {
   filterIcon,
   blueArrow,
   xbutton,
+  noDataChart,
+  notFoundImg,
 };

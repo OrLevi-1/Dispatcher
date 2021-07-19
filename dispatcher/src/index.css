@@ -30,3 +30,7 @@ body {
   background: #262146;
   border-radius: 20px;
 }
+
+a {
+  text-decoration: none;
+}
