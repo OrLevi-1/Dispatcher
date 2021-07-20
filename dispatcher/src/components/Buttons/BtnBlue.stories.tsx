@@ -2,6 +2,7 @@ import React from "react";
 import { BtnBlue } from "./BtnBlue";
 import { Story, Meta } from "@storybook/react";
 import { BtnProps } from "./BtnBlue";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/BlueButton",
@@ -13,7 +14,11 @@ export default {
   },
 } as Meta;
 
-export const Primary = () => <BtnBlue BtnType={""} BtnText={"Login"} />;
+export const Primary = () => (
+  <MemoryRouter>
+    <BtnBlue BtnType={""} BtnText={"Login"} />
+  </MemoryRouter>
+);
 
 // export const Log = () => (
 //   <LoginBtn onClick={() => console.log("Button clicked")}>Log</LoginBtn>

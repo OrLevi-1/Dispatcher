@@ -1,6 +1,7 @@
 import SearchBar from "./SearchBar";
 import { Story, Meta } from "@storybook/react";
 import { SearchBarProps } from "./SearchBar";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/Search",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Search = () => <SearchBar />;
+export const Search = () => (
+  <MemoryRouter>
+    <SearchBar />
+  </MemoryRouter>
+);
 
 const Template: Story<SearchBarProps> = (args) => <SearchBar {...args} />;

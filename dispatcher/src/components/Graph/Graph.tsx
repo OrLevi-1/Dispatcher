@@ -27,11 +27,11 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#08483b"];
 
 export const ReChart = ({}) => {
   return (
-    <PieChart width={200} height={150}>
+    <PieChart width={130} height={130}>
       <Pie
         data={data}
-        cx={100}
-        cy={80}
+        cx={60}
+        cy={60}
         innerRadius={40}
         outerRadius={60}
         fill="#8884d8"

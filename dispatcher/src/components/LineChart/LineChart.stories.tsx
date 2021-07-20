@@ -1,6 +1,7 @@
 import LineChart from "./LineChart";
 import { Story, Meta } from "@storybook/react";
 import { LineChartProps } from "./LineChart";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/LineChart",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Chart = () => <LineChart />;
+export const Chart = () => (
+  <MemoryRouter>
+    <LineChart />
+  </MemoryRouter>
+);
 
 const Template: Story<LineChartProps> = (args) => <LineChart {...args} />;

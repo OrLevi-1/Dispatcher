@@ -7,8 +7,8 @@ const CardTag: React.FC<CardTagProps> = ({}) => {
   return (
     <TagContainer>
       <SingleTag>Everything</SingleTag>
-      <SingleTag>+3</SingleTag>
       <SingleTag>Israel</SingleTag>
+      <SingleTag>+3</SingleTag>
     </TagContainer>
   );
 };

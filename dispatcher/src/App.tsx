@@ -4,27 +4,13 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { LoginPage } from "./components/Auth/Login-page/LoginPage.stories";
-import { RegisterPage } from "./components/Auth/Register-page/RegisterPage.stories";
-import Header from "./components/Header/Header";
-import {
-  MainBody,
-  TopBody,
-  WideDivider,
-  MainDropDowns,
-  NewsBody,
-  GraphsBody,
-  MainNoData,
-} from "./styles/StyledComps";
-import Dropdown from "./components/Dropdown/Dropdown";
-import LineChart from "./components/LineChart/LineChart";
 
-import NewsCard from "./components/NewsCard/NewsCard";
-import FilterMobile from "./components/FilterMobile/FilterMobile";
-import Graph from "./components/Graph/Graph";
 import FilterPage from "./components/FilterMobile/FilterPage";
 import MobileSearch from "./components/MobileSearch/MobileSearch";
-import { notFoundImg } from "./assets";
+import RegisterPage from "./components/Auth/Register-page/RegisterPage";
+import LoginPage from "./components/Auth/Login-page/LoginPage";
+import Home from "./components/Home/Home";
+import NoData from "./components/NoData/NoData";
 
 function App() {
   return (
@@ -44,52 +30,11 @@ function App() {
           </Route>
 
           <Route path="/home">
-            <Header />
-            <TopBody>
-              <MainDropDowns>
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-              </MainDropDowns>
-              <WideDivider />
-            </TopBody>
-            <FilterMobile />
-            <MainBody>
-              <NewsBody>
-                <NewsCard />
-              </NewsBody>
-              <GraphsBody>
-                <Graph />
-                <LineChart />
-              </GraphsBody>
-            </MainBody>
+            <Home />
           </Route>
 
           <Route path="/nodata">
-            <Header />
-            <TopBody>
-              <MainDropDowns>
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-                <Dropdown isSearch={false} withArrow={true} />
-              </MainDropDowns>
-              <WideDivider />
-            </TopBody>
-            <FilterMobile />
-            <MainBody>
-              <NewsBody>
-                <MainNoData>
-                  <img src={notFoundImg} />
-                  <a>We couldn't find any matches for your query</a>
-                </MainNoData>
-              </NewsBody>
-              <GraphsBody>
-                <Graph isData={false} />
-                <LineChart isData={false} />
-              </GraphsBody>
-            </MainBody>
+            <NoData />
           </Route>
 
           <Route path="/search">

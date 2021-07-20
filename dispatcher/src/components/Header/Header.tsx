@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   BlueBar,
@@ -10,6 +10,7 @@ import {
   Notifications,
   Avatar,
   StyledLink,
+  LogoSearchDiv,
 } from "../../styles/StyledComps";
 import {
   logo,
@@ -20,21 +21,30 @@ import {
 } from "../../assets";
 
 import SearchBar from "../SearchBar/SearchBar";
+import MobileSearch from "../MobileSearch/MobileSearch";
 
 export interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}) => {
+  const [showSearch, setShowSearch] = useState(false);
+
   return (
     <BlueBar>
-      <StyledLink to="/">
-        <HeaderIcon src={logo} />
-      </StyledLink>
-      <SearchDiv>
-        <SearchBar />
-      </SearchDiv>
+      <LogoSearchDiv>
+        <StyledLink to="/">
+          <HeaderIcon src={logo} />
+        </StyledLink>
+        <SearchDiv>
+          <SearchBar />
+        </SearchDiv>
+      </LogoSearchDiv>
+
       <Iconbar>
         <StyledLink to="/search">
-          <SearchIconMobile src={searchIcon} />
+          <SearchIconMobile
+            src={searchIcon}
+            onClick={() => setShowSearch(true)}
+          />
         </StyledLink>
         <StyledLink to="/nodata">
           <Settings src={settingsIcon} />

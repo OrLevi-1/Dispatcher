@@ -1,6 +1,7 @@
 import MobileSearch from "./MobileSearch";
 import { Story, Meta } from "@storybook/react";
 import { MobileSearchProps } from "./MobileSearch";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/MobileSearch",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Search = () => <MobileSearch />;
+export const Search = () => (
+  <MemoryRouter>
+    <MobileSearch />
+  </MemoryRouter>
+);
 
 const Template: Story<MobileSearchProps> = (args) => <MobileSearch {...args} />;
