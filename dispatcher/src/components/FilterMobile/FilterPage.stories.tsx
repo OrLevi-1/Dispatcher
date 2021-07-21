@@ -1,6 +1,7 @@
 import FilterPage from "./FilterPage";
 import { Story, Meta } from "@storybook/react";
 import { FilterPageProps } from "./FilterPage";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/FilterPage",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Filter = () => <FilterPage />;
+export const Filter = () => (
+  <MemoryRouter>
+    <FilterPage />
+  </MemoryRouter>
+);
 
 const Template: Story<FilterPageProps> = (args) => <FilterPage {...args} />;

@@ -1,6 +1,7 @@
 import CardTag from "./CardTag";
 import { Story, Meta } from "@storybook/react";
 import { CardTagProps } from "./CardTag";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/CardTag",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Tag = () => <CardTag />;
+export const Tag = () => (
+  <MemoryRouter>
+    <CardTag />
+  </MemoryRouter>
+);
 
 const Template: Story<CardTagProps> = (args) => <CardTag {...args} />;

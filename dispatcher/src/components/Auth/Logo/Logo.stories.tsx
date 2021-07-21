@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import { Story, Meta } from "@storybook/react";
 import { LogoProps } from "./Logo";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Auth Components/Logo",
@@ -10,7 +11,11 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const AuthLogo = () => <Logo />;
+export const AuthLogo = () => (
+  <MemoryRouter>
+    <Logo />
+  </MemoryRouter>
+);
 
 const Template: Story<LogoProps> = (args) => <Logo {...args} />;
 

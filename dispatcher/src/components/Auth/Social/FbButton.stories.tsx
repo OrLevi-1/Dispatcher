@@ -2,6 +2,7 @@ import React from "react";
 import FbButton from "./FbButton";
 import { Story, Meta } from "@storybook/react";
 import { FbButtonProps } from "./FbButton";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Auth Components/Buttons/FbButton",
@@ -13,7 +14,11 @@ export default {
   },
 } as Meta;
 
-export const Primary = () => <FbButton />;
+export const Primary = () => (
+  <MemoryRouter>
+    <FbButton />
+  </MemoryRouter>
+);
 
 // export const Log = () => (
 //   <LoginBtn onClick={() => console.log("Button clicked")}>Log</LoginBtn>

@@ -1,6 +1,7 @@
 import Dropdown from "./Dropdown";
 import { Story, Meta } from "@storybook/react";
 import { DropdownProps } from "./Dropdown";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Home/Dropdown",
@@ -9,6 +10,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Dropdownlist = () => <Dropdown isSearch={true} withArrow={true} />;
+export const Dropdownlist = () => (
+  <MemoryRouter>
+    <Dropdown isSearch={true} withArrow={true} />
+  </MemoryRouter>
+);
 
 const Template: Story<DropdownProps> = (args) => <Dropdown {...args} />;

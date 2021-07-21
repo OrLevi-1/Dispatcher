@@ -337,7 +337,8 @@ export const HeaderIcon = styled.img`
   border-radius: 0px;
   width: 65px;
   height: 50px;
-  margin: 0 15px;
+  margin-right: 120px;
+  margin-left: 16px;
 `;
 export const Settings = styled.img`
   border-radius: 0px;
@@ -372,10 +373,12 @@ export const SearchIconMobile = styled.img`
   }
 `;
 export const SearchDiv = styled.div`
-  margin-left: 10%;
   @media (max-width: 850px) {
     display: none;
   }
+`;
+export const LogoSearchDiv = styled.div`
+  display: flex;
 `;
 
 // Header - Search
@@ -407,9 +410,13 @@ export const SearchInput = styled.input`
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
+
   color: ${Colors.textDarkBlue};
   &::placeholder {
     color: ${Colors.inputPlaceholder};
+  }
+  &:focus {
+    outline: none;
   }
 `;
 export const SearchIcon = styled.img`
@@ -429,16 +436,16 @@ export const SearchDivider = styled.div`
 export const CardContainer = styled.div`
   display: flex;
 
-  width: 800px;
+  width: 988px;
   height: auto;
   align-items: center;
-  margin: 20px 10px;
+  margin: 12px 10px;
   background: white;
   border: 1px solid ${Colors.borderWhite};
   box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1240px) {
     width: auto;
     height: auto;
   }
@@ -525,14 +532,25 @@ export const CardButton = styled.div`
 
 export const MainBody = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 0px 20px;
+  height: 82vh;
+  width: fit-content;
+  margin-left: 176px;
+  padding: 0 16px;
+  overflow-y: scroll;
+  @media (max-width: 1450px) {
+    margin-left: 48px;
+  }
+  @media (max-width: 850px) {
+    margin-left: 0px;
+  }
 `;
 export const TopBody = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
+  margin-left: 200px;
+  margin-right: 200px;
 
   @media (max-width: 850px) {
     display: none;
@@ -547,20 +565,32 @@ export const GraphsBody = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 export const WideDivider = styled.div`
-  width: 75%;
+  width: 1440px;
   height: 0px;
   opacity: 1;
   border: 1px solid ${Colors.borderWhite};
   margin-top: 20px;
+  @media (max-width: 1660px) {
+    width: 1350px;
+  }
+  @media (max-width: 1550px) {
+    width: 1280px;
+  }
+  @media (max-width: 1450px) {
+    width: 100%;
+  }
 `;
 export const MainDropDowns = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
+  width: fit-content;
   margin-top: 20px;
   background-color: ${Colors.backGroundMain};
 `;
@@ -574,12 +604,55 @@ export const FilterContainer = styled.div`
     align-items: center;
   }
 `;
+
+// No results Page
+export const NoDataContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82vh;
+  width: auto;
+  margin-left: 176px;
+  padding: 0 16px;
+  overflow-y: scroll;
+  @media (max-width: 1450px) {
+    margin-left: 48px;
+  }
+  @media (max-width: 850px) {
+    margin-left: 0px;
+  }
+`;
+export const NoDataBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 1000px;
+  @media (max-width: 1350px) {
+    width: 900px;
+  }
+  @media (max-width: 1260px) {
+    width: 800px;
+  }
+  @media (max-width: 1160px) {
+    width: 700px;
+  }
+  @media (max-width: 1050px) {
+    width: 600px;
+  }
+  @media (max-width: 1000px) {
+    width: 800px;
+  }
+  @media (max-width: 888px) {
+    width: fit-content;
+  }
+`;
 export const MainNoData = styled.div`
   display: flex;
   flex-direction: column;
-  width: 470px;
-  height: 150px;
-  margin: 200px;
+  align-items: center;
+  /* width: 600px; */
+  /* height: 150px; */
+  width: 100%;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
@@ -588,6 +661,11 @@ export const MainNoData = styled.div`
   text-align: center;
 
   color: ${Colors.textDarkBlue};
+`;
+export const NoDataImg = styled.img`
+  display: flex;
+  width: 133px;
+  height: 133px;
 `;
 
 // Card Tags
@@ -621,22 +699,21 @@ export const SingleTag = styled.div`
 export const GraphCard = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 412px;
   height: auto;
-  align-items: flex-start;
+  align-items: center;
   padding: 25px 15px 25px 25px;
-  margin: 20px 10px;
+  margin: 12px 8px;
   background: white;
   border: 1px solid ${Colors.borderWhite};
   box-sizing: border-box;
   box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
-
-  @media (max-width: 1100px) {
-    display: none;
+  @media (max-width: 1660px) {
+    width: 320px;
   }
-  @media (max-width: 850px) {
-    display: none;
+  @media (max-width: 1550px) {
+    width: 250px;
   }
 `;
 export const GraphHeader = styled.div`
@@ -645,6 +722,7 @@ export const GraphHeader = styled.div`
   font-weight: bold;
   font-size: 24px;
   line-height: 32px;
+  margin-right: auto;
   color: ${Colors.textBlack};
 `;
 export const LeftColumn = styled.ul`
@@ -674,12 +752,12 @@ export const GraphDetails = styled.div`
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 412px;
   height: 300px;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 25px 15px 25px 25px;
-  margin: 20px 10px;
+  margin: 12px 8px;
   background: white;
   border: 1px solid ${Colors.borderWhite};
   box-sizing: border-box;
@@ -694,11 +772,11 @@ export const ChartContainer = styled.div`
   letter-spacing: 0.25px;
   color: ${Colors.textDarkBlue};
 
-  @media (max-width: 1100px) {
-    display: none;
+  @media (max-width: 1660px) {
+    width: 320px;
   }
-  @media (max-width: 850px) {
-    display: none;
+  @media (max-width: 1550px) {
+    width: 250px;
   }
 `;
 export const ProgressContainer = styled.div`
@@ -717,7 +795,7 @@ export const LineDiv = styled.div`
   margin: 12px 0px;
 `;
 export const ProgressBar = styled.div`
-  width: 100px;
+  width: 50%;
   background-color: #f3f3ff;
   border-radius: 20px;
   margin: 0px 15px;
@@ -738,11 +816,15 @@ export const ChartNoData = styled.div`
 `;
 
 // Mobile Search
-
+export const MobileSearchMain = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
 export const MobileSearchContainer = styled.div`
   display: flex;
   background-color: ${Colors.backGroundMain};
   flex-direction: column;
+  width: 80%;
 `;
 export const MobileSearchHeader = styled.div`
   display: flex;

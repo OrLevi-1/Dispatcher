@@ -2,6 +2,7 @@ import React from "react";
 import GoogleBtn from "./GoogleBtn";
 import { Story, Meta } from "@storybook/react";
 import { GoogleBtnProps } from "./GoogleBtn";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   title: "Auth Components/Buttons/GoogleButton",
@@ -13,7 +14,11 @@ export default {
   },
 } as Meta;
 
-export const Primary = () => <GoogleBtn />;
+export const Primary = () => (
+  <MemoryRouter>
+    <GoogleBtn />
+  </MemoryRouter>
+);
 
 // export const Log = () => (
 //   <LoginBtn onClick={() => console.log("Button clicked")}>Log</LoginBtn>
