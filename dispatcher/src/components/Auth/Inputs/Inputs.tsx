@@ -5,7 +5,7 @@ import {
   InputText,
   Asterisk,
   InputLine,
-} from "../../../styles/StyledComps";
+} from "./StyledInputs";
 import { asterisk } from "../../../assets";
 
 export interface InputsProps {

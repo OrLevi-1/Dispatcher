@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MobileSearchContainer,
-  MobileSearchMain,
-} from "../../styles/StyledComps";
+import { MobileSearchContainer, MobileSearchMain } from "./StyledMobileSearch";
 import MsHeader from "./MsHeader";
 import SearchHistory from "./SearchHistory";
 

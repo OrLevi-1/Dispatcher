@@ -9,7 +9,7 @@ import {
   NoDataImg,
   TopBody,
   WideDivider,
-} from "../../styles/StyledComps";
+} from "./StyledNoData";
 import Dropdown from "../Dropdown/Dropdown";
 import FilterMobile from "../FilterMobile/FilterMobile";
 import Graph from "../Graph/Graph";
@@ -21,7 +21,7 @@ interface NoDataProps {}
 const NoData: React.FC<NoDataProps> = ({}) => {
   return (
     <>
-      <Header />
+      <Header onSearchClick={() => {}} />
       <TopBody>
         <MainDropDowns>
           <Dropdown isSearch={false} withArrow={true} />
@@ -31,7 +31,7 @@ const NoData: React.FC<NoDataProps> = ({}) => {
         </MainDropDowns>
         <WideDivider />
       </TopBody>
-      <FilterMobile />
+      <FilterMobile onFilterClick={() => {}} />
       <NoDataContainer>
         <NoDataBody>
           <MainNoData>

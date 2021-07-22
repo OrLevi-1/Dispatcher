@@ -6,7 +6,7 @@ import {
   GraphHeader,
   ProgressContainer,
   ChartNoData,
-} from "../../styles/StyledComps";
+} from "./StyledLineChart";
 import LineBar from "./LineBar";
 
 export interface LineChartProps {

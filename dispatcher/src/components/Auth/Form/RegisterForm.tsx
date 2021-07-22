@@ -1,16 +1,9 @@
-import {
-  Container,
-  Title,
-  Question,
-  FormLine,
-  StyledLink,
-} from "../../../styles/StyledComps";
+import { Container, Title, Question, FormLine } from "./StyledForm";
 import "typeface-roboto";
 import Inputs from "../Inputs/Inputs";
 import BtnBlue from "../../Buttons/BtnBlue";
-import { Link } from "react-router-dom";
-
 import React from "react";
+import { StyledLink } from "../../../styles/StyledComps";
 
 export interface RegisterFormProps {}
 

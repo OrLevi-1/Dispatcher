@@ -6,7 +6,7 @@ import {
   SearchInput,
   SearchIcon,
   SearchDivider,
-} from "../../styles/StyledComps";
+} from "./StyledSearchBar";
 
 export interface SearchBarProps {}
 

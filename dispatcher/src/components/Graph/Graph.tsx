@@ -5,9 +5,9 @@ import {
   GraphDetails,
   LeftColumn,
   RightColumn,
-  ChartNoData,
   ProgressContainer,
-} from "../../styles/StyledComps";
+  ChartNoData,
+} from "./StyledGraph";
 
 import { PieChart, Pie, Cell } from "recharts";
 import { noDataChart } from "../../assets";

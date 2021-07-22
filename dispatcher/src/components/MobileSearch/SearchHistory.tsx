@@ -10,7 +10,7 @@ import {
   HistoryText,
   HistoryDelete,
   HistoryDivider,
-} from "../../styles/StyledComps";
+} from "./StyledMobileSearch";
 
 export interface SearchHistoryProps {}
 

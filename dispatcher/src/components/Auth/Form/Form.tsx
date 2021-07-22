@@ -1,17 +1,10 @@
-import {
-  Container,
-  Title,
-  FormLine,
-  Question,
-  Divider,
-  StyledLink,
-  LoginLink,
-} from "../../../styles/StyledComps";
+import { Container, Title, FormLine, Question, Divider } from "./StyledForm";
 import Inputs from "../Inputs/Inputs";
 import BtnBlue from "../../Buttons/BtnBlue";
 import GoogleBtn from "../Social/GoogleBtn";
 import FbButton from "../Social/FbButton";
 import React from "react";
+import { LoginLink, StyledLink } from "../../../styles/StyledComps";
 
 export interface FormProps {}
 

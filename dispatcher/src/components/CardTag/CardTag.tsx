@@ -1,5 +1,5 @@
 import React from "react";
-import { SingleTag, TagContainer } from "../../styles/StyledComps";
+import { SingleTag, TagContainer } from "./StyledCardTag";
 
 export interface CardTagProps {}
 

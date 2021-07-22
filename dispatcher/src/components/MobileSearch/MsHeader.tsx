@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { SearchInput } from "../../styles/StyledComps";
 import { blueArrow, xbutton } from "../../assets";
 import {
-  MobileSearchHeader,
   ArrowImg,
   CancelImg,
-} from "../../styles/StyledComps";
+  MobileSearchHeader,
+  SearchInput,
+} from "./StyledMobileSearch";
 
 export interface MsHeaderProps {}
 

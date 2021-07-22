@@ -10,10 +10,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const HeaderBar = () => (
-  <MemoryRouter>
-    <Header />
-  </MemoryRouter>
-);
+export const HeaderBar = () => <MemoryRouter>{/* <Header /> */}</MemoryRouter>;
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
