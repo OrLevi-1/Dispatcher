@@ -10,7 +10,7 @@ import {
   FilterLine,
   FilterText,
   FilterSelection,
-} from "../../styles/StyledComps";
+} from "./StyledFilterMobile";
 
 export interface FilterPageProps {
   inDetails?: boolean;

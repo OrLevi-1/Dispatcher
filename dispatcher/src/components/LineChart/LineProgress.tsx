@@ -1,6 +1,6 @@
 import React from "react";
 import InnerBar from "./InnerBar";
-import { ProgressBar } from "../../styles/StyledComps";
+import { ProgressBar } from "./StyledLineChart";
 
 interface LineProgressProps {
   value?: number;

@@ -10,8 +10,7 @@ import {
   ArticleTitle,
   CardButton,
   ArticleTop,
-  StyledLink,
-} from "../../styles/StyledComps";
+} from "./StyledNewsCard";
 import CardTag from "../CardTag/CardTag";
 import News from "../../data/news.json";
 

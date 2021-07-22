@@ -1,5 +1,5 @@
 import React from "react";
-import { GreyBtn, SocialImage, ButtonText } from "../../../styles/StyledComps";
+import { GreyBtn, SocialImage, ButtonText } from "./StyledSocial";
 import { googleLogo } from "../../../assets";
 
 export interface GoogleBtnProps {}

@@ -1,6 +1,6 @@
 import React from "react";
 import { arrow } from "../../assets";
-import { BlueBtn, Text, Arrow } from "../../styles/StyledComps";
+import { BlueBtn, Text, Arrow } from "./StyledBtnBlue";
 
 export interface BtnProps {
   BtnText?: string;

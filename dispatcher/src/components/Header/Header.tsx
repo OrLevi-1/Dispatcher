@@ -9,9 +9,8 @@ import {
   Settings,
   Notifications,
   Avatar,
-  StyledLink,
   LogoSearchDiv,
-} from "../../styles/StyledComps";
+} from "./StyledHeader";
 import {
   logo,
   settingsIcon,
@@ -21,13 +20,13 @@ import {
 } from "../../assets";
 
 import SearchBar from "../SearchBar/SearchBar";
-import MobileSearch from "../MobileSearch/MobileSearch";
+import { StyledLink } from "../../styles/StyledComps";
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  onSearchClick: (isClick: boolean) => void;
+}
 
-const Header: React.FC<HeaderProps> = ({}) => {
-  const [showSearch, setShowSearch] = useState(false);
-
+const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
   return (
     <BlueBar>
       <LogoSearchDiv>
@@ -40,12 +39,10 @@ const Header: React.FC<HeaderProps> = ({}) => {
       </LogoSearchDiv>
 
       <Iconbar>
-        <StyledLink to="/search">
-          <SearchIconMobile
-            src={searchIcon}
-            onClick={() => setShowSearch(true)}
-          />
-        </StyledLink>
+        <SearchIconMobile
+          src={searchIcon}
+          onClick={() => onSearchClick(true)}
+        />
         <StyledLink to="/nodata">
           <Settings src={settingsIcon} />
         </StyledLink>

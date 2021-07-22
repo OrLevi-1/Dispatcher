@@ -1,6 +1,6 @@
 import React from "react";
 import LineProgress from "./LineProgress";
-import { LineDiv } from "../../styles/StyledComps";
+import { LineDiv } from "./StyledLineChart";
 
 export interface LineBarProps {
   name?: string;

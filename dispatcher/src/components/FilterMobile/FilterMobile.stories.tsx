@@ -11,9 +11,7 @@ export default {
 } as Meta;
 
 export const Filter = () => (
-  <MemoryRouter>
-    <FilterMobile />
-  </MemoryRouter>
+  <MemoryRouter>{/* <FilterMobile /> */}</MemoryRouter>
 );
 
 const Template: Story<FilterMobileProps> = (args) => <FilterMobile {...args} />;

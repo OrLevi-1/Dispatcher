@@ -1,18 +1,27 @@
 import React from "react";
 
 import { filterIcon } from "../../assets";
-import { FilterContainer, StyledLink } from "../../styles/StyledComps";
+
 import Dropdown from "../Dropdown/Dropdown";
+import { StyledLink } from "../../styles/StyledComps";
+import { FilterContainer } from "./StyledFilterMobile";
 
-export interface FilterMobileProps {}
+export interface FilterMobileProps {
+  onFilterClick: (isClick: boolean) => void;
+}
 
-const FilterMobile: React.FC<FilterMobileProps> = ({}) => {
+const FilterMobile: React.FC<FilterMobileProps> = ({ onFilterClick }) => {
   return (
     <FilterContainer>
       <Dropdown isSearch={false} withArrow={true} />
-      <StyledLink to="/filter">
-        <img src={filterIcon} />
-      </StyledLink>
+      {/* <StyledLink to="/filter"> */}
+      <img
+        src={filterIcon}
+        onClick={() => {
+          onFilterClick(true);
+        }}
+      />
+      {/* </StyledLink> */}
     </FilterContainer>
   );
 };
