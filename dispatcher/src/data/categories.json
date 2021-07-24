@@ -1,0 +1,75 @@
+{
+  "main_categories": [
+    { "id": 1, "name": "Everything" },
+    { "id": 2, "name": "Top Headlines" }
+  ],
+  "everything_categories": [
+    { "id": 1, "name": "Sort By" },
+    { "id": 2, "name": "Dates" },
+    { "id": 3, "name": "Sources" },
+    { "id": 4, "name": "Languages" },
+    { "id": 5, "name": "Results per page" }
+  ],
+  "top_categories": [
+    { "id": 1, "name": "Country" },
+    { "id": 2, "name": "Category" },
+    { "id": 3, "name": "Sources" },
+    { "id": 4, "name": "Results per page" }
+  ],
+  "countries": [
+    { "id": 1, "name": "USA" },
+    { "id": 2, "name": "Britain" },
+    { "id": 3, "name": "Germany" },
+    { "id": 4, "name": "Italy" },
+    { "id": 5, "name": "France" },
+    { "id": 6, "name": "Spain" },
+    { "id": 7, "name": "Israel" },
+    { "id": 8, "name": "China" },
+    { "id": 9, "name": "Japan" },
+    { "id": 10, "name": "Mexico" },
+    { "id": 11, "name": "Russia" }
+  ],
+  "sub_categories": [
+    { "id": 1, "name": "General" },
+    { "id": 2, "name": "Business" },
+    { "id": 3, "name": "Sports" },
+    { "id": 4, "name": "Politics" },
+    { "id": 5, "name": "Tourism" },
+    { "id": 6, "name": "Health" },
+    { "id": 7, "name": "Entertainment" },
+    { "id": 8, "name": "Science" }
+  ],
+  "sources": [
+    { "id": 1, "name": "BBC" },
+    { "id": 2, "name": "NBC" },
+    { "id": 3, "name": "ABC" },
+    { "id": 4, "name": "FOX" },
+    { "id": 5, "name": "CNN" },
+    { "id": 6, "name": "YNET" },
+    { "id": 7, "name": "Yahoo" }
+  ],
+  "languages": [
+    { "id": 1, "name": "English" },
+    { "id": 2, "name": "Spanish" },
+    { "id": 3, "name": "Hebrew" },
+    { "id": 4, "name": "Arabic" },
+    { "id": 5, "name": "French" },
+    { "id": 6, "name": "Italian" }
+  ],
+  "sort_by": [
+    { "id": 1, "name": "Relevancy" },
+    { "id": 2, "name": "Popularity" },
+    { "id": 3, "name": "Published At" }
+  ],
+  "results_per_page": [
+    { "id": 1, "name": "20" },
+    { "id": 2, "name": "30" },
+    { "id": 3, "name": "40" }
+  ],
+  "dates": [
+    { "id": 1, "name": "2018" },
+    { "id": 2, "name": "2019" },
+    { "id": 3, "name": "2020" },
+    { "id": 4, "name": "2021" }
+  ]
+}

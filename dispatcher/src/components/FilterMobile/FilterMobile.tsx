@@ -1,9 +1,6 @@
 import React from "react";
-
 import { filterIcon } from "../../assets";
-
 import Dropdown from "../Dropdown/Dropdown";
-import { StyledLink } from "../../styles/StyledComps";
 import { FilterContainer } from "./StyledFilterMobile";
 
 export interface FilterMobileProps {
@@ -13,15 +10,13 @@ export interface FilterMobileProps {
 const FilterMobile: React.FC<FilterMobileProps> = ({ onFilterClick }) => {
   return (
     <FilterContainer>
-      <Dropdown isSearch={false} withArrow={true} />
-      {/* <StyledLink to="/filter"> */}
+      <Dropdown isSearch={true} withArrow={true} />
       <img
         src={filterIcon}
         onClick={() => {
           onFilterClick(true);
         }}
       />
-      {/* </StyledLink> */}
     </FilterContainer>
   );
 };

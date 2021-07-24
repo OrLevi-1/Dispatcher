@@ -15,6 +15,8 @@ import FilterMobile from "../FilterMobile/FilterMobile";
 import Graph from "../Graph/Graph";
 import Header from "../Header/Header";
 import LineChart from "../LineChart/LineChart";
+import NewsNoData from "./NewsNoData";
+import GraphsNoData from "./GraphsNoData";
 
 interface NoDataProps {}
 
@@ -32,18 +34,8 @@ const NoData: React.FC<NoDataProps> = ({}) => {
         <WideDivider />
       </TopBody>
       <FilterMobile onFilterClick={() => {}} />
-      <NoDataContainer>
-        <NoDataBody>
-          <MainNoData>
-            <NoDataImg src={notFoundImg} />
-            <a>We couldn't find any matches for your query</a>
-          </MainNoData>
-        </NoDataBody>
-        <GraphsBody>
-          <Graph isData={false} />
-          <LineChart isData={false} />
-        </GraphsBody>
-      </NoDataContainer>
+      <NewsNoData />
+      <GraphsNoData />
     </>
   );
 };

@@ -33,7 +33,7 @@ const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
           <FilterLine>
             <FilterText>Search in</FilterText>
             <FilterSelection>
-              <Dropdown isSearch={false} withArrow={false} />
+              <Dropdown isSearch={true} withArrow={false} />
             </FilterSelection>
           </FilterLine>
           <FullDivider />

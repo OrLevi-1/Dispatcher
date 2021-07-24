@@ -18,6 +18,9 @@ import NewsCard from "../NewsCard/NewsCard";
 import LineChart from "../LineChart/LineChart";
 import FilterPage from "../FilterMobile/FilterPage";
 import MobileSearch from "../MobileSearch/MobileSearch";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import DropdownCategories from "../../data/categories.json";
 
 export interface HomeProps {
   isSearch?: boolean;
@@ -28,6 +31,8 @@ const Home: React.FC<HomeProps> = ({}) => {
   const [searchClick, setSearchClick] = useState(false);
   const [filterClick, setFilterClick] = useState(false);
   const [filterDeepClick, setFilterDeep] = useState(false);
+
+  const dropdowns = useSelector((state: RootState) => state.filter);
 
   const searchClickHandler = (isClicked: boolean) => {
     setSearchClick(isClicked);
@@ -62,10 +67,23 @@ const Home: React.FC<HomeProps> = ({}) => {
       <Header onSearchClick={searchClickHandler} />
       <TopBody>
         <MainDropDowns>
-          <Dropdown isSearch={false} withArrow={true} />
-          <Dropdown isSearch={false} withArrow={true} />
-          <Dropdown isSearch={false} withArrow={true} />
-          <Dropdown isSearch={false} withArrow={true} />
+          {dropdowns.mainFilter === "Everything"
+            ? DropdownCategories.everything_categories.map((cat) => (
+                <Dropdown
+                  isSearch={false}
+                  withArrow={true}
+                  key={cat.id}
+                  mainTitle={cat.name}
+                />
+              ))
+            : DropdownCategories.top_categories.map((cat) => (
+                <Dropdown
+                  isSearch={false}
+                  withArrow={true}
+                  key={cat.id}
+                  mainTitle={cat.name}
+                />
+              ))}
         </MainDropDowns>
         <WideDivider />
       </TopBody>

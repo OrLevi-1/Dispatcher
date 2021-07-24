@@ -2,6 +2,8 @@ import SearchBar from "./SearchBar";
 import { Story, Meta } from "@storybook/react";
 import { SearchBarProps } from "./SearchBar";
 import { MemoryRouter } from "react-router-dom";
+import store from "../../store/store";
+import { Provider } from "react-redux";
 
 export default {
   title: "Home/Search",
@@ -10,9 +12,11 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Search = () => (
+export const BarSearch = () => (
   <MemoryRouter>
-    <SearchBar />
+    <Provider store={store}>
+      <SearchBar />
+    </Provider>
   </MemoryRouter>
 );
 
