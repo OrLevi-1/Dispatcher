@@ -16,7 +16,7 @@ import { searchActions } from "../../store/search";
 export interface SearchBarProps {}
 
 const SearchBar: React.FC<SearchBarProps> = ({}) => {
-  const search = useSelector((state: RootState) => state.search);
+  // const search = useSelector((state: RootState) => state.search);
   const dispatch = useDispatch();
 
   return (
@@ -27,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({}) => {
         placeholder="Search"
         onChange={(event) => {
           dispatch(searchActions.setSearchTerm(event.target.value));
-          console.log(search);
+          // console.log(search);
         }}
       />
       <SearchDivider />

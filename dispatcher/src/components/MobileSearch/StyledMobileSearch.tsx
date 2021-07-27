@@ -3,7 +3,7 @@ import { Colors } from "../../styles/Colors";
 
 export const MobileSearchMain = styled.div`
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   position: absolute;
   left: 20%;
   width: 80%;
