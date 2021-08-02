@@ -19,7 +19,10 @@ export const FilterMobileContainer = styled.div`
   color: ${Colors.textDarkBlue};
 `;
 export const FilterTitle = styled.a`
-  margin: 20px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 24px 15px;
 `;
 export const FilterText = styled.a`
   font-weight: normal;

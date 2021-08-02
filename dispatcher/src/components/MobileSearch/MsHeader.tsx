@@ -10,9 +10,11 @@ import {
   SearchInput,
 } from "./StyledMobileSearch";
 
-export interface MsHeaderProps {}
+export interface MsHeaderProps {
+  onBackClick: (isClick: boolean) => void;
+}
 
-const MsHeader: React.FC<MsHeaderProps> = ({}) => {
+const MsHeader: React.FC<MsHeaderProps> = ({ onBackClick }) => {
   const [inputVal, setinputVal] = useState("");
   const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const search = useSelector((state: RootState) => state.search);
@@ -25,19 +27,29 @@ const MsHeader: React.FC<MsHeaderProps> = ({}) => {
   const clearSearch = () => {
     inputRef.current.value = "";
     setinputVal("");
+    dispatch(searchActions.setSearchTerm(""));
   };
 
   const searchSumbit = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
-      if (inputVal !== "") dispatch(searchActions.setSearchTerm(inputVal));
+    if (event.key === "Enter" && inputRef.current.value != "") {
+      dispatch(searchActions.setSearchTerm(inputVal));
+      dispatch(searchActions.setArrayTerm(inputVal));
     }
   };
 
-  const closeSearch = () => {};
+  const resetSearchTerm = () => {
+    dispatch(searchActions.setSearchTerm(""));
+  };
 
   return (
     <MobileSearchHeader>
-      <ArrowImg src={blueArrow} onClick={closeSearch} />
+      <ArrowImg
+        src={blueArrow}
+        onClick={() => {
+          onBackClick(false);
+          resetSearchTerm();
+        }}
+      />
       <SearchInput
         type="text"
         placeholder="Search"

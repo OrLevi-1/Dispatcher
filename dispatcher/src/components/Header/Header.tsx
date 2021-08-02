@@ -21,6 +21,7 @@ import {
 
 import SearchBar from "../SearchBar/SearchBar";
 import { StyledLink } from "../../styles/StyledComps";
+import { getAllNews } from "../../services/EverythingService";
 
 export interface HeaderProps {
   onSearchClick: (isClick: boolean) => void;
@@ -46,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
         <StyledLink to="/nodata">
           <Settings src={settingsIcon} />
         </StyledLink>
-        <Notifications src={notifications} />
+        <Notifications src={notifications} onClick={() => getAllNews()} />
         <Link to="/login">
           <Avatar src={userAvatar} />
         </Link>

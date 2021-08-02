@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { searchTerm: "" };
+const initialState = { searchTerm: "", searchArray: [""] };
 
 const searchSlice = createSlice({
   name: "search-input",
@@ -8,6 +8,15 @@ const searchSlice = createSlice({
   reducers: {
     setSearchTerm(state, action) {
       state.searchTerm = action.payload;
+    },
+    setArrayTerm(state, action) {
+      state.searchArray.push(action.payload);
+    },
+    removeArrayTerm(state, action) {
+      state.searchArray.splice(action.payload, 1);
+    },
+    clearArrayTerm(state) {
+      state.searchArray.splice(1, state.searchArray.length);
     },
   },
 });
