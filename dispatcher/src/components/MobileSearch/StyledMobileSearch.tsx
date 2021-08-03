@@ -5,8 +5,8 @@ export const MobileSearchMain = styled.div`
   display: flex;
   /* justify-content: flex-end; */
   position: absolute;
-  left: 20%;
-  width: 80%;
+  left: 0%;
+  width: 100%;
   height: 100vh;
   z-index: 1;
 `;

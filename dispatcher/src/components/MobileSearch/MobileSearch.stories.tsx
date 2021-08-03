@@ -11,9 +11,7 @@ export default {
 } as Meta;
 
 export const Search = () => (
-  <MemoryRouter>
-    <MobileSearch />
-  </MemoryRouter>
+  <MemoryRouter>{/* <MobileSearch onBackClick={() => {}} /> */}</MemoryRouter>
 );
 
 const Template: Story<MobileSearchProps> = (args) => <MobileSearch {...args} />;

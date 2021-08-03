@@ -41,7 +41,7 @@ function App() {
             </Route>
 
             <Route path="/search">
-              <MobileSearch />
+              <MobileSearch onBackClick={() => {}} />
             </Route>
 
             <Route path="/filter">

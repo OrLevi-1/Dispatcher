@@ -10,10 +10,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-export const Search = () => (
-  <MemoryRouter>
-    <MsHeader />
-  </MemoryRouter>
-);
+export const Search = () => <MemoryRouter>{/* <MsHeader /> */}</MemoryRouter>;
 
 const Template: Story<MsHeaderProps> = (args) => <MsHeader {...args} />;

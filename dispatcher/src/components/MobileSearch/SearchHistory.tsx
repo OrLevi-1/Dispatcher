@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { xbutton } from "../../assets";
+import { searchActions } from "../../store/search";
 import { RootState } from "../../store/store";
 import {
   HistoryContainer,
@@ -18,27 +19,34 @@ export interface SearchHistoryProps {}
 
 const SearchHistory: React.FC<SearchHistoryProps> = ({}) => {
   const searchList: string[] = [];
+  const dispatch = useDispatch();
   const [searches, setSearches] = useState(searchList);
-  const lastSearch = useSelector((state: RootState) => state.search);
+  const lastSearch = useSelector((state: RootState) => state.search.searchTerm);
+  const searchArray = useSelector(
+    (state: RootState) => state.search.searchArray
+  );
 
   useEffect(() => {
-    setSearches([...searches, lastSearch.searchTerm]);
-    console.log(searches);
+    setSearches(searchArray.slice(1));
+    console.log(searchArray);
   }, [lastSearch]);
 
   const deleteItem = (val: string) => {
+    console.log(val);
+    const index = searchArray.indexOf(val);
+    console.log(index);
     const tempList = [...searches];
-    const index = tempList.indexOf(val);
+
     if (index !== -1) {
-      tempList.splice(index, 1);
+      dispatch(searchActions.removeArrayTerm(index));
+      tempList.splice(index - 1, 1);
       setSearches(tempList);
     }
   };
 
   const deleteAll = () => {
-    const tempList = [...searches];
-    tempList.splice(1, tempList.length);
-    setSearches(tempList);
+    setSearches(searchList);
+    dispatch(searchActions.clearArrayTerm());
   };
 
   return (
@@ -54,7 +62,7 @@ const SearchHistory: React.FC<SearchHistoryProps> = ({}) => {
         </RecentSearchesButton>
       </RecentSearches>
       <HistoryDiv>
-        {searches.slice(1).map((val, index) => (
+        {searches.map((val, index) => (
           <div key={index}>
             <HistoryLine>
               <HistoryText>{val}</HistoryText>

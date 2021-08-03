@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { blueArrow } from "../../assets";
+import { RootState } from "../../store/store";
 import Dropdown from "../Dropdown/Dropdown";
 import {
   FilterMobileContainer,
@@ -11,25 +13,29 @@ import {
   FilterText,
   FilterSelection,
 } from "./StyledFilterMobile";
+import SubFilterPage from "./SubFilterPage";
+import categories from "../../data/categories.json";
 
 export interface FilterPageProps {
   inDetails?: boolean;
 }
 
 const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
+  const filter = useSelector((state: RootState) => state.filter);
+
+  const [lineClick, setLineClick] = useState("");
+  const [backClick, setBackClick] = useState(false);
+
+  const backClickHandler = (isClick: boolean) => {
+    setBackClick(isClick);
+  };
+
   return (
     <FilterMobileContainer>
-      {inDetails ? (
-        <FilterSubText>
-          <FilterBackArrow src={blueArrow} />
-          SOURCES
-        </FilterSubText>
-      ) : (
-        <FilterTitle>FILTER</FilterTitle>
-      )}
-      <FullDivider />
-      {!inDetails && (
+      {!backClick ? (
         <>
+          <FilterTitle>FILTER</FilterTitle>
+          <FullDivider />
           <FilterLine>
             <FilterText>Search in</FilterText>
             <FilterSelection>
@@ -37,32 +43,43 @@ const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
             </FilterSelection>
           </FilterLine>
           <FullDivider />
+          {filter.mainFilter === "Everything"
+            ? categories.everything_categories.slice(1).map((title, index) => {
+                return (
+                  <div key={index}>
+                    <FilterLine
+                      onClick={() => {
+                        setLineClick(title.name);
+                        setBackClick(true);
+                      }}
+                    >
+                      <FilterText>{title.name}</FilterText>
+                      {!inDetails && <FilterSubText>All</FilterSubText>}
+                    </FilterLine>
+                    <FullDivider />
+                  </div>
+                );
+              })
+            : categories.top_categories.map((title, index) => {
+                return (
+                  <div key={index}>
+                    <FilterLine
+                      onClick={() => {
+                        setLineClick(title.name);
+                        setBackClick(true);
+                      }}
+                    >
+                      <FilterText>{title.name}</FilterText>
+                      {!inDetails && <FilterSubText>All</FilterSubText>}
+                    </FilterLine>
+                    <FullDivider />
+                  </div>
+                );
+              })}
         </>
+      ) : (
+        <SubFilterPage title={lineClick} onBackClick={backClickHandler} />
       )}
-
-      <FilterLine>
-        <FilterText>Sources</FilterText>
-        {!inDetails && <FilterSubText>All</FilterSubText>}
-      </FilterLine>
-      <FullDivider />
-
-      <FilterLine>
-        <FilterText>Language</FilterText>
-        {!inDetails && <FilterSubText>All</FilterSubText>}
-      </FilterLine>
-      <FullDivider />
-
-      <FilterLine>
-        <FilterText>Dates</FilterText>
-        {!inDetails && <FilterSubText>All</FilterSubText>}
-      </FilterLine>
-      <FullDivider />
-
-      <FilterLine>
-        <FilterText>Results per page</FilterText>
-        {!inDetails && <FilterSubText>All</FilterSubText>}
-      </FilterLine>
-      <FullDivider />
     </FilterMobileContainer>
   );
 };

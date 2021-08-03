@@ -6,65 +6,33 @@ import {
   MainBody,
   NewsBody,
   GraphsBody,
-  SearchTransition,
-  SearchFilterMask,
-  FilterTransition,
 } from "./StyledHome";
 import Dropdown from "../Dropdown/Dropdown";
 import FilterMobile from "../FilterMobile/FilterMobile";
 import Graph from "../Graph/Graph";
-import Header from "../Header/Header";
 import NewsCard from "../NewsCard/NewsCard";
 import LineChart from "../LineChart/LineChart";
-import FilterPage from "../FilterMobile/FilterPage";
-import MobileSearch from "../MobileSearch/MobileSearch";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import DropdownCategories from "../../data/categories.json";
 
-export interface HomeProps {
+export interface MainNewsBodyProps {
   isSearch?: boolean;
-  isFilter?: boolean;
+  filterClicked?: (click: boolean) => void;
 }
 
-const Home: React.FC<HomeProps> = ({}) => {
-  const [searchClick, setSearchClick] = useState(false);
+const MainNewsBody: React.FC<MainNewsBodyProps> = ({ filterClicked }) => {
   const [filterClick, setFilterClick] = useState(false);
-  const [filterDeepClick, setFilterDeep] = useState(false);
 
   const dropdowns = useSelector((state: RootState) => state.filter);
 
-  const searchClickHandler = (isClicked: boolean) => {
-    setSearchClick(isClicked);
-  };
   const filterClickHandler = (isClicked: boolean) => {
     setFilterClick(isClicked);
-  };
-  const filterDeepClickHandler = (isClicked: boolean) => {
-    setFilterDeep(isClicked);
   };
 
   return (
     <>
-      <SearchTransition isSearch={searchClick}>
-        <MobileSearch onBackClick={searchClickHandler} />
-        {/* <SearchFilterMask
-          onClick={() => {
-            setSearchClick(false);
-          }}
-        /> */}
-      </SearchTransition>
-
-      <FilterTransition isFilter={filterClick}>
-        <FilterPage />
-        <SearchFilterMask
-          onClick={() => {
-            setFilterClick(false);
-          }}
-        />
-      </FilterTransition>
-
-      <Header onSearchClick={searchClickHandler} />
       <TopBody>
         <MainDropDowns>
           {dropdowns.mainFilter === "Everything"
@@ -102,4 +70,4 @@ const Home: React.FC<HomeProps> = ({}) => {
   );
 };
 
-export default Home;
+export default MainNewsBody;
