@@ -8,9 +8,12 @@ const baseURL = "https://newsapi.org/v2/everything?";
 const apiToken = "apiKey=78fdf3af3c48480295baba22dcb78ce0";
 
 export const getAllNews = async () => {
-  let res = await api.get(baseURL + "q=Israel&" + apiToken, {
-    params: { _limit: 40 },
-  });
+  let res = await api.get(
+    baseURL + "q=Israel&" + "sortBy=publishedAt&" + "language=en&" + apiToken,
+    {
+      params: { _limit: 40 },
+    }
+  );
   console.log(res);
   return res;
 };

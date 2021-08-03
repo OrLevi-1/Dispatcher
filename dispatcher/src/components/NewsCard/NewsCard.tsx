@@ -78,7 +78,7 @@ const NewsCard: React.FC<NewsCardProps> = ({}) => {
         val.title.toLowerCase().includes(search.searchTerm.toLowerCase())
       )
     );
-  }, [data, filter, search]);
+  }, [data, allNews, topNews, filter, search]);
 
   const d = new Intl.DateTimeFormat("en-GB", {
     year: "numeric",
