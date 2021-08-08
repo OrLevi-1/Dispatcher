@@ -78,6 +78,7 @@ export const RecentSearchesButton = styled.div`
 export const HistoryDiv = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: auto;
 `;
 export const HistoryLine = styled.div`
   display: flex;

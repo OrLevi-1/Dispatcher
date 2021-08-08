@@ -22,6 +22,9 @@ export interface FilterPageProps {
 
 const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
   const filter = useSelector((state: RootState) => state.filter);
+  const filterArray = useSelector(
+    (state: RootState) => state.filter.filterArray
+  );
 
   const [lineClick, setLineClick] = useState("");
   const [backClick, setBackClick] = useState(false);
@@ -54,7 +57,10 @@ const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
                       }}
                     >
                       <FilterText>{title.name}</FilterText>
-                      {!inDetails && <FilterSubText>All</FilterSubText>}
+                      <FilterSubText>
+                        {/* {filterArray[filterArray.length - 1].id.toUpperCase()} */}
+                        All
+                      </FilterSubText>
                     </FilterLine>
                     <FullDivider />
                   </div>
@@ -70,7 +76,16 @@ const FilterPage: React.FC<FilterPageProps> = ({ inDetails }) => {
                       }}
                     >
                       <FilterText>{title.name}</FilterText>
-                      {!inDetails && <FilterSubText>All</FilterSubText>}
+                      <FilterSubText>
+                        {/* {filterArray[
+                          filterArray.length - 1
+                        ].id.toUpperCase() === "" ? (
+                          <>All</>
+                        ) : (
+                          filterArray[filterArray.length - 1].id.toUpperCase()
+                        )} */}
+                        All
+                      </FilterSubText>
                     </FilterLine>
                     <FullDivider />
                   </div>

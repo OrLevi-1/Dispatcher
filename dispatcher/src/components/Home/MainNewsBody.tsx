@@ -6,6 +6,8 @@ import {
   MainBody,
   NewsBody,
   GraphsBody,
+  FilterTransition,
+  SearchFilterMask,
 } from "./StyledHome";
 import Dropdown from "../Dropdown/Dropdown";
 import FilterMobile from "../FilterMobile/FilterMobile";
@@ -16,13 +18,14 @@ import LineChart from "../LineChart/LineChart";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import DropdownCategories from "../../data/categories.json";
+import FilterPage from "../FilterMobile/FilterPage";
 
 export interface MainNewsBodyProps {
   isSearch?: boolean;
   filterClicked?: (click: boolean) => void;
 }
 
-const MainNewsBody: React.FC<MainNewsBodyProps> = ({ filterClicked }) => {
+const MainNewsBody: React.FC<MainNewsBodyProps> = () => {
   const [filterClick, setFilterClick] = useState(false);
 
   const dropdowns = useSelector((state: RootState) => state.filter);
@@ -33,6 +36,15 @@ const MainNewsBody: React.FC<MainNewsBodyProps> = ({ filterClicked }) => {
 
   return (
     <>
+      <FilterTransition isFilter={filterClick}>
+        <FilterPage />
+        <SearchFilterMask
+          onClick={() => {
+            setFilterClick(false);
+          }}
+        />
+      </FilterTransition>
+
       <TopBody>
         <MainDropDowns>
           {dropdowns.mainFilter === "Everything"
@@ -53,6 +65,12 @@ const MainNewsBody: React.FC<MainNewsBodyProps> = ({ filterClicked }) => {
                 />
               ))}
         </MainDropDowns>
+        <Dropdown
+          isSearch={false}
+          withArrow={false}
+          mainTitle={"Previous Page"}
+        />
+        <Dropdown isSearch={false} withArrow={false} mainTitle={"Next Page"} />
         <WideDivider />
       </TopBody>
       <FilterMobile onFilterClick={filterClickHandler} />
@@ -63,7 +81,7 @@ const MainNewsBody: React.FC<MainNewsBodyProps> = ({ filterClicked }) => {
         </NewsBody>
         <GraphsBody>
           <Graph />
-          <LineChart />
+          {/* <LineChart /> */}
         </GraphsBody>
       </MainBody>
     </>

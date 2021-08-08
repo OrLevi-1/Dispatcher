@@ -11,6 +11,8 @@ const FilterMobile: React.FC<FilterMobileProps> = ({ onFilterClick }) => {
   return (
     <FilterContainer>
       <Dropdown isSearch={true} withArrow={true} />
+      <Dropdown isSearch={false} withArrow={false} mainTitle={"Prev"} />
+      <Dropdown isSearch={false} withArrow={false} mainTitle={"Next"} />
       <img
         src={filterIcon}
         onClick={() => {

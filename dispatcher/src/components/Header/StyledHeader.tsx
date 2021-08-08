@@ -22,6 +22,9 @@ export const HeaderIcon = styled.img`
   height: 50px;
   margin-right: 120px;
   margin-left: 16px;
+  @media (max-width: 1200px) {
+    margin-right: 32px;
+  }
 `;
 export const Settings = styled.img`
   border-radius: 0px;

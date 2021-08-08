@@ -21,6 +21,8 @@ import MobileSearch from "../MobileSearch/MobileSearch";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import DropdownCategories from "../../data/categories.json";
+import { Divider } from "../Auth/Form/StyledForm";
+import { FullDivider } from "../FilterMobile/StyledFilterMobile";
 
 export interface HomeProps {
   isSearch?: boolean;
@@ -48,11 +50,6 @@ const Home: React.FC<HomeProps> = ({}) => {
     <>
       <SearchTransition isSearch={searchClick}>
         <MobileSearch onBackClick={searchClickHandler} />
-        {/* <SearchFilterMask
-          onClick={() => {
-            setSearchClick(false);
-          }}
-        /> */}
       </SearchTransition>
 
       <FilterTransition isFilter={filterClick}>
@@ -84,6 +81,16 @@ const Home: React.FC<HomeProps> = ({}) => {
                   mainTitle={cat.name}
                 />
               ))}
+          <Dropdown
+            isSearch={false}
+            withArrow={false}
+            mainTitle={"Previous Page"}
+          />
+          <Dropdown
+            isSearch={false}
+            withArrow={false}
+            mainTitle={"Next Page"}
+          />
         </MainDropDowns>
         <WideDivider />
       </TopBody>
@@ -95,7 +102,7 @@ const Home: React.FC<HomeProps> = ({}) => {
         </NewsBody>
         <GraphsBody>
           <Graph />
-          <LineChart />
+          {/* <LineChart /> */}
         </GraphsBody>
       </MainBody>
     </>
