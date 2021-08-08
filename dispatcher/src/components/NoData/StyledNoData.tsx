@@ -5,7 +5,7 @@ export const NoDataContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 82vh;
+  height: 80vh;
   width: auto;
   margin-left: 176px;
   padding: 0 16px;
@@ -14,22 +14,16 @@ export const NoDataContainer = styled.div`
     margin-left: 48px;
   }
   @media (max-width: 850px) {
-    margin-left: 0px;
+    margin-left: 16px;
   }
 `;
 export const NoDataBody = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 1000px;
-  @media (max-width: 1350px) {
-    width: 900px;
-  }
-  @media (max-width: 1260px) {
-    width: 800px;
-  }
+  width: 700px;
   @media (max-width: 1160px) {
-    width: 700px;
+    width: 600px;
   }
   @media (max-width: 1050px) {
     width: 600px;

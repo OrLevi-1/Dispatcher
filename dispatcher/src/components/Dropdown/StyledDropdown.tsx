@@ -27,6 +27,8 @@ export const DropdownDiv = styled.div`
   position: relative;
   display: inline-block;
   margin-right: ${(props: DropdownProps) => (props.isSearch ? "0px" : "10px")};
+  margin-bottom: ${(props: DropdownProps) => (props.isSearch ? "0px" : "10px")};
+  margin-top: ${(props: DropdownProps) => (props.isSearch ? "0px" : "10px")};
 `;
 export const DropdownContent = styled.div`
   display: none;

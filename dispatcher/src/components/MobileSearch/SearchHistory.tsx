@@ -27,13 +27,23 @@ const SearchHistory: React.FC<SearchHistoryProps> = ({}) => {
   );
 
   useEffect(() => {
-    setSearches(searchArray.slice(1));
-    console.log(searchArray);
+    const searchHistory: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      searchHistory.push(localStorage.key(i)!);
+    }
+    setSearches(searchHistory);
+    console.log("history", searchHistory);
   }, [lastSearch]);
 
   const deleteItem = (val: string) => {
     console.log(val);
-    const index = searchArray.indexOf(val);
+    // const index = searchArray.indexOf(val);
+    let index = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+      if (localStorage.key(i) !== val) {
+        index++;
+      }
+    }
     console.log(index);
     const tempList = [...searches];
 
@@ -41,12 +51,14 @@ const SearchHistory: React.FC<SearchHistoryProps> = ({}) => {
       dispatch(searchActions.removeArrayTerm(index));
       tempList.splice(index - 1, 1);
       setSearches(tempList);
+      localStorage.removeItem(val);
     }
   };
 
   const deleteAll = () => {
     setSearches(searchList);
     dispatch(searchActions.clearArrayTerm());
+    localStorage.clear();
   };
 
   return (

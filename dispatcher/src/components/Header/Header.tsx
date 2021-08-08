@@ -44,10 +44,8 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
           src={searchIcon}
           onClick={() => onSearchClick(true)}
         />
-        <StyledLink to="/nodata">
-          <Settings src={settingsIcon} />
-        </StyledLink>
-        <Notifications src={notifications} onClick={() => getAllNews()} />
+        {/* <Settings src={settingsIcon} />
+        <Notifications src={notifications} /> */}
         <Link to="/login">
           <Avatar src={userAvatar} />
         </Link>

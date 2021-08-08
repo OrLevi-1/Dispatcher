@@ -7,7 +7,7 @@ export const GraphCard = styled.div`
   width: 412px;
   height: auto;
   align-items: center;
-  padding: 25px 15px 25px 25px;
+  padding: 25px 15px 25px 15px;
   margin: 12px 8px;
   background: white;
   border: 1px solid ${Colors.borderWhite};
@@ -30,14 +30,23 @@ export const GraphHeader = styled.div`
   margin-right: auto;
   color: ${Colors.textBlack};
 `;
-export const LeftColumn = styled.ul`
-  color: ${Colors.graphText};
-  padding: 0px 20px;
+export const DetailsTable = styled.table`
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  width: 100%;
 `;
-export const RightColumn = styled.ul`
+export const LeftColumn = styled.td`
+  word-wrap: break-word;
+  color: ${Colors.graphText};
+  /* padding: 0px 20px; */
+`;
+export const RightColumn = styled.td`
   list-style-type: none;
   color: ${Colors.listGrey};
-  padding: 0px 20px;
+  text-align: right;
+  word-break: break-all;
+  /* padding: 0px 20px 0px 0px; */
 `;
 export const GraphDetails = styled.div`
   display: flex;

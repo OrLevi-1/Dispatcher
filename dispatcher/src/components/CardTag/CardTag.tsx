@@ -1,14 +1,16 @@
 import React from "react";
 import { SingleTag, TagContainer } from "./StyledCardTag";
 
-export interface CardTagProps {}
+export interface CardTagProps {
+  mainTag?: string;
+  subTag?: string;
+}
 
-const CardTag: React.FC<CardTagProps> = ({}) => {
+const CardTag: React.FC<CardTagProps> = ({ mainTag, subTag }) => {
   return (
     <TagContainer>
-      <SingleTag>Everything</SingleTag>
-      <SingleTag>Israel</SingleTag>
-      <SingleTag>+3</SingleTag>
+      <SingleTag>{mainTag}</SingleTag>
+      <SingleTag>{subTag}</SingleTag>
     </TagContainer>
   );
 };

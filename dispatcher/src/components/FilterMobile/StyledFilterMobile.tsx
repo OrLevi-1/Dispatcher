@@ -62,7 +62,7 @@ export const FilterContainer = styled.div`
   padding: 0px 10px;
   @media (max-width: 850px) {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: white;
     align-items: center;
   }
